@@ -1,0 +1,1 @@
+g++ -O3 -march=native -ffast-math -funroll-loops -fPIC -shared @scripts\_wrapper\src\list.txt -o packages.mdll

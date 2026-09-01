@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../Sprites/Editor/Editor.tsx"/>
+ <object name="simple" type="SwapCollisionLayer" gid="16" width="83" height="107">
+  <properties>
+   <property name="layer_class" propertytype="collision_layer_classname" value="CollisionA"/>
+  </properties>
+ </object>
+</template>

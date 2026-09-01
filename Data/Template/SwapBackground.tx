@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../Sprites/Editor/Editor.tsx"/>
+ <object name="SwapBackground" type="SwapBackground" gid="19" width="32" height="32">
+  <properties>
+   <property name="select" value="B1"/>
+  </properties>
+ </object>
+</template>

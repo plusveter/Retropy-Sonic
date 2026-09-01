@@ -1,0 +1,52 @@
+{
+    "automappingRulesFile": "",
+    "commands": [
+    ],
+    "compatibilityVersion": 1100,
+    "extensionsPath": "extensions",
+    "folders": [
+        "."
+    ],
+    "properties": [
+    ],
+    "propertyTypes": [
+        {
+            "id": 1,
+            "name": "collision_layer_classname",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "CollisionA",
+                "CollisionB"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "color": "#ffff0000",
+            "drawFill": true,
+            "id": 2,
+            "members": [
+            ],
+            "name": "CollisionA",
+            "type": "class",
+            "useAs": [
+                "property",
+                "layer"
+            ]
+        },
+        {
+            "color": "#ff0000ff",
+            "drawFill": true,
+            "id": 3,
+            "members": [
+            ],
+            "name": "CollisionB",
+            "type": "class",
+            "useAs": [
+                "property",
+                "layer",
+                "project"
+            ]
+        }
+    ]
+}

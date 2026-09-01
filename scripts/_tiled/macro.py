@@ -1,0 +1,7 @@
+
+DEFAULT_SOUNDFX_CHANNEL = "TiledObject"
+
+LAYERTYPE_TILELAYER     = "tilelayer"
+LAYERTYPE_OBJECTGROUP   = "objectgroup"
+
+TILESETS_COLLISIONCLASS = "collision"

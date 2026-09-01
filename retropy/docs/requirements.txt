@@ -1,0 +1,5 @@
+zstandard
+moderngl
+pygame-ce
+numpy
+pyyaml

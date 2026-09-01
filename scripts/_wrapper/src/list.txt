@@ -1,0 +1,10 @@
+scripts/_wrapper/src/surfarray/fake_alpha.cpp
+scripts/_wrapper/src/surfarray/perfect_horizontal_scroll.cpp
+scripts/_wrapper/src/surfarray/perfect_vertical_scroll.cpp
+scripts/_wrapper/src/surfarray/apply_color_offset.cpp
+scripts/_wrapper/src/surfarray/rotate.cpp
+scripts/_wrapper/src/surfarray/flip.cpp
+scripts/_wrapper/src/surfarray/scale.cpp
+
+scripts/_wrapper/src/palette/lerp_color.cpp
+

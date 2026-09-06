@@ -84,18 +84,20 @@ class Player(PlayerBase):
 		player_states(self)
 		player_direction(self)
 
-		self.steps = 1 + abs(math.floor(self.speed.x/13)) + abs(math.floor(self.speed.y/13))
+		self.steps = 1 + abs(math.floor(abs(self.speed.x)/13)) + abs(math.floor(abs(self.speed.y)/13))
 		# print(f"""{str(self.steps):<5} [{str(abs(self.speed[0])):<30} | {str(abs(self.speed[1])):<30}] {str(self.ground_speed):<5}""")
 		
 		self.chunk_mask = tiledmap.get_chunk_datamask(self.position[0], self.position[1], radius=3+self.steps, tilelayer_id=self.ground_layer)
 
 		for i in range(self.steps):
 			player_movement(self)
-			if self.collision_allow:
+			if self.collision_allow: # ...
 				player_collision(self)
 				#player_collision_objects(self)
 			self.get_ANGLE()
-		
+
+		self.ground_object = False
+		self.flailing = 0
 		self.sensor_UPDATE()
 		
 		#player_handle_hurt(self)
@@ -107,30 +109,34 @@ class Player(PlayerBase):
 		self.player_list[self.player_id].rendering(self)
 		player_handle_camera(self)
 
-		debug = 0
+		debug = 1
 		tile_angles = 0
 		sensors_collision = 1
+		hitbox_collision = 0
 
 		self.get_ANGLE()
 		if debug:
 			if tile_angles:
-				render_rect(self.left_rot	, [255, 128, 0], special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)
-				render_rect(self.right_rot	, [0, 128, 255], special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)
+				prerender_rect(self.left_rot	, 1, special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)
+				prerender_rect(self.right_rot	, 1, special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)
 
 			if sensors_collision:
 
-				render_rect(self.sensor_Down_SHIFT.rect, 		[120, 200, 255])		;self.draw(-self.position)
-				render_rect(self.sensor_Down.rect, 				[255, 255, 255])		;self.draw(-self.position)
-				render_rect(self.sensor_STOP_right.rect, 		[255, 255, 255])		;self.draw(-self.position)
-				render_rect(self.sensor_STOP_left.rect, 		[255, 255, 255])		;self.draw(-self.position)
-				render_rect(self.sensor_Up.rect, 				[255, 255, 255])		;self.draw(-self.position)
-				render_rect(self.sensor_center_Down.rect, 		[255, 255, 255])		;self.draw(-self.position)
+				prerender_rect(self.sensor_Down_SHIFT.rect, 		1)		;self.draw(-self.position)
+				prerender_rect(self.sensor_Down.rect, 				1)		;self.draw(-self.position)
+				prerender_rect(self.sensor_STOP_right.rect, 		1)		;self.draw(-self.position)
+				prerender_rect(self.sensor_STOP_left.rect, 			1)		;self.draw(-self.position)
+				prerender_rect(self.sensor_Up.rect, 				1)		;self.draw(-self.position)
 
-				render_rect(self.sensor_ROTATION_left.rect, 	[0, 255, 0])			;self.draw(-self.position)
-				render_rect(self.sensor_ROTATION_right.rect, 	[0, 0, 255])			;self.draw(-self.position)
+				prerender_rect(self.sensor_center_Down.rect, 		2)		;self.draw(-self.position)
+				prerender_rect(self.sensor_ROTATION_left.rect, 		2)			;self.draw(-self.position)
+				prerender_rect(self.sensor_ROTATION_right.rect, 	2)			;self.draw(-self.position)
 
-				render_rect(self.sensor_climb.rect, 			[100, 255, 100])		;self.draw(-self.position)
-				render_rect(self.sensor_climb_up.rect, 			[0, 255, 0]	   )		;self.draw(-self.position)
+				prerender_rect(self.sensor_climb.rect, 				1)		;self.draw(-self.position)
+				prerender_rect(self.sensor_climb_up.rect, 			1)		;self.draw(-self.position)
+
+			if hitbox_collision:
+				prerender_rect(self.hitbox, 						1)		;self.draw()
 
 			
 			

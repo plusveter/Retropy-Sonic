@@ -95,7 +95,8 @@ class TiledObjectEntity(ObjectEntity ):
             if not tiledmap.objects.get(self.tiled_id): return 1
             data = tiledmap.objects[self.tiled_id]
 
-        self.position               = vec2(data["x"], data["y"])
+        self.position           = vec2(data["x"], data["y"])
+        
         self.tiled_name         = data["name"]
         self.tiled_layerid      = data["layerid"]
         self.tiled_z            = data["z"]

@@ -8,24 +8,37 @@
          "name":"SwapObjects",
          "objects":[
                 {
+                 "height":294,
                  "id":1,
                  "template":"..\/..\/Template\/swap_layer\/simple.tx",
-                 "x":36,
-                 "y":112
-                }, 
+                 "width":304,
+                 "x":84,
+                 "y":239
+                }],
+         "opacity":0.51,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"Object Layer 3",
+         "objects":[
                 {
-                 "height":39,
-                 "id":4,
+                 "height":48,
+                 "id":13,
                  "name":"Box",
                  "opacity":1,
                  "rotation":0,
                  "type":"Box",
                  "visible":true,
-                 "width":37,
-                 "x":146,
-                 "y":18
+                 "width":240,
+                 "x":-32,
+                 "y":64
                 }],
-         "opacity":0.51,
+         "opacity":1,
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -39,6 +52,13 @@
                  "width":16,
                  "x":0,
                  "y":0
+                }, 
+                {
+                 "data":"KLUv\/WAAAxUBADAAAYAAAQEKgLA+2SWFQ1Av7oQd1TAE6qYCrgTvTsaFciY=",
+                 "height":16,
+                 "width":16,
+                 "x":16,
+                 "y":0
                 }],
          "class":"CollisionA",
          "compression":"zstd",
@@ -51,7 +71,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":16,
+         "width":32,
          "x":0,
          "y":0
         }, 
@@ -62,6 +82,13 @@
                  "height":16,
                  "width":16,
                  "x":0,
+                 "y":0
+                }, 
+                {
+                 "data":"KLUv\/WAAA30DAMJEDRewJ8sBgHsD7g2MgPHgsHjn3oAmSXIhU4tTXOIQdzjDEW5whTKjzCRHcMkFDnAc5I4zzvQ0GaAgj1kluRnQgqPzfRBLDFbG\/jHvpbcvOBNIOMkdcb4Rxxi2iHlbjPPQMET9pIyFvV55LtSqAQ==",
+                 "height":16,
+                 "width":16,
+                 "x":16,
                  "y":0
                 }],
          "compression":"zstd",
@@ -74,7 +101,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":16,
+         "width":32,
          "x":0,
          "y":0
         }, 
@@ -86,8 +113,8 @@
                 {
                  "id":3,
                  "template":"..\/..\/Template\/player\/sonic.tx",
-                 "x":71,
-                 "y":56
+                 "x":256,
+                 "y":-160
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -95,8 +122,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":6,
+ "nextlayerid":7,
+ "nextobjectid":328,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

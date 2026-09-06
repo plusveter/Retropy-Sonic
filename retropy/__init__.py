@@ -213,15 +213,21 @@ def constrain_prerender():
     graphic.pivot       = vec2( max(x, 0), max(y, 0) )
     
 
-def render_prerender():
+def prerender_rect(rect:pygame.Rect|list, color_id:int, special_flags: int = 0):
     """ [Retropy | Graphic | Surfarray] """
-    render_surfarray(graphic.surfarray, pivot=graphic.pivot, special_flags=graphic.special_flags, offset=graphic.offset, palette_id=graphic.palette)
+    array2d = numpy.ones((rect[2] * rect[3]), dtype=numpy.uint8).reshape((rect[2], rect[3]))
+    array2d[:] = color_id
+    prerender(array2d, vec2(rect[0], rect[1]), special_flags=special_flags)
 
 def render_rect(rect:pygame.Rect|list, color:pygame.Color|str|list, special_flags: int = 0):
     """ [Retropy | Graphic | Surfarray] """
     surface = pygame.Surface((rect[2], rect[3]))
     surface.fill(color)
     render(surface, vec2(rect[0], rect[1]), special_flags=special_flags)
+
+def render_prerender():
+    """ [Retropy | Graphic | Surfarray] """
+    render_surfarray(graphic.surfarray, pivot=graphic.pivot, special_flags=graphic.special_flags, offset=graphic.offset, palette_id=graphic.palette)
 
 def apply_scale(new_width:int, new_height:int):
     """ [Retropy | Graphic] """

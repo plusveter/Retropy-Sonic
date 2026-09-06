@@ -38,9 +38,11 @@ def player_movement(self:PlayerBase):
 			self.speed[0] = float(self.ground_speed * math.cos(math.radians(self.ground_angle )))
 			self.speed[1] = float(self.ground_speed * -math.sin(math.radians(self.ground_angle )))
 
-	self.position_rel[0] = clamp(self.speed[0], -MAX_SPEED, MAX_SPEED)/self.steps
-	self.position_rel[1] = clamp(self.speed[1], -MAX_SPEED, MAX_SPEED)/self.steps
+	self.position_rel[0] = ((clamp(self.speed.x, -MAX_SPEED, MAX_SPEED))/self.steps) - self.collision_offset.x
+	self.position_rel[1] = ((clamp(self.speed.y, -MAX_SPEED, MAX_SPEED))/self.steps) - self.collision_offset.y
 
 	self.position[0] = self.position[0]+self.position_rel[0]
 	self.position[1] = self.position[1]+self.position_rel[1]
+
+	self.collision_offset = vec2(0)
 	

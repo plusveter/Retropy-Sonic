@@ -7,6 +7,8 @@ from .macros import *
 def SHIFT_collision(self:PlayerBase):
     self.sensor_UPDATE()
 
+    if self.ground_object: return
+
     if self.MODE == 0:
         if self.ground:
             self.position[1] += (self.sensor_Down.attract_floor(self.chunk_mask))
@@ -40,7 +42,7 @@ def collision_correction(self:PlayerBase):
                     if not self.ground: self.ground_speed = self.speed[0]
                     self.landing()
         else:
-            self.ground = False
+            if not self.ground_object: self.ground = False
 
     elif self.MODE == 1:
         if self.sensor_Down_SHIFT.collide(self.chunk_mask):
@@ -240,14 +242,14 @@ def player_collision(self:PlayerBase):
     up_cond = not self.CONTR_sensor == "0"
     down_cond = not self.CONTR_sensor == "1"
 
-    if collision_stop_cond: 
+    if collision_stop_cond:
         Collision_Stop(self)
         
     if up_cond: 
         if (down_cond or self.speed[1] < 0.5):
             UP_collision(self)
     
-    if down_cond: 
+    if down_cond:
         collision_correction(self)
 
     if collision_stop_cond: 

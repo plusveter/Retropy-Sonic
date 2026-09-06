@@ -12,10 +12,20 @@ class Box(TiledObjectEntity):
 
         color = 1
         for player in check_object_by_classname("Player"):
-            if check_object_collision_box(self, self.hitbox, player, player.hitbox, 1):
+            if player.platform_standing == self.entity_id:
+                player.Stand_on_Platform(player.hitbox, self, self.hitbox)
+                color = 16
+
+            
+            if player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, 1):
                 color = 8
-                if check_object_collision_platform(self, self.hitbox, player, player.hitbox, 1):
-                    color = 16
+
+                if player.platform_standing == -1 and 0:
+                    
+                    if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
+                        player.Stand_on_Platform(player.hitbox, self, self.hitbox)
+                
+            
 
         prerender_rect(self.hitbox, color)
         self.draw()

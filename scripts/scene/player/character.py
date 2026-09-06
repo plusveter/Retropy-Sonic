@@ -41,7 +41,15 @@ class Character:
 		#self.rotation = self.ground_angle 
 		self.render_FrameData(self.sprites.framedata(self.anim, self.animation_tracker))
 
-		self.apply_flip(flipX=min(0, self.facing))
+		facing = min(0, self.facing)
+
+		if self.flailing == 1:
+			facing = 1
+
+		elif self.flailing == 3:
+			facing = 0
+
+		self.apply_flip(flipX=facing)
 		self.apply_rotation(self.rotation)
 		self.draw_image([self.position[0]-cam_coord[0], self.position[1]-cam_coord[1]])
 

@@ -227,49 +227,6 @@ class PlayerBase(TiledObjectEntity):
 		self.clamp_storey = self.position[1]
 		self.can_climb = False
 
-		
-
-		
-
-	def do_restart(self):
-		self.glide_speed = 0
-		self.knuckles_angle = 0
-
-		self.upward_rotation = False
-		self.ground = False
-		self.speed = [0, 0]
-		self.facing = 1
-		self.ground_speed = 0
-		self.ground_angle  = 0
-		self.y_accel = 0
-		self.PUSH = False
-		self.MODE = 0
-		self.CONTR_sensor = "N"
-	
-		self.jump_flag = False
-		self.ceiling_lock = 0
-		self.death_timer = 0
-		
-		self.idle_timer = 0
-		self.touching_ceiling = False
-		self.animation_has_finished = False
-		self.jump_anim_speed = 0
-		self.landed = False
-		self.steps = 1
-		self.hurt_position = 0
-		self.is_time_over = 0
-
-		self.state = 0
-		self.knockout_type = 0
-		self.shield = S_NONE
-		self.dropdash_timer = 0
-
-		self.invincible_timer = 0
-		self.invincible = False
-
-		self.air = 0
-		self.chunk_mask = None
-
 	def point_check(self, x, y):
 		return point_to_dmask([x, y], self.position).collide(self.chunk_mask)
 	
@@ -313,6 +270,107 @@ class PlayerBase(TiledObjectEntity):
 		'''
 		"""
 		pass
+
+	def Check_Object_Collision_Box(self, self_hitbox, other_object, other_hitbox, set_values):
+		# link : https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/SonicMania/Objects/Global/Player.c#L2267
+		side  = super().Check_Object_Collision_Box(self_hitbox, other_object, other_hitbox, set_values)
+
+
+		if side == C_TOP:
+
+			self.controlLock = 0
+			self.collisionMode = G_MODE_FLOOR
+
+			other_object.position = vec2(other_object.position)
+
+			colPos = [
+				other_object.position.x + other_hitbox.left, 
+				 other_object.position.x + other_hitbox.right
+			]
+
+			sensorX1 = self.position.x + self.sensor_ROTATION_left.offsetx
+			sensorX2 = self.position.x + (self.sensor_ROTATION_left.offsetx + self.sensor_center_Down.offsetx) /2
+			sensorX3 = self.position.x + self.sensor_center_Down.offsetx
+			sensorX4 = self.position.x + (self.sensor_ROTATION_right.offsetx + self.sensor_center_Down.offsetx) /2
+			sensorX5 = self.position.x + self.sensor_ROTATION_right.offsetx
+
+			if sensorX1 >= colPos[0] and sensorX1 <= colPos[1] and sensorX3 >= colPos[0] and sensorX3 <= colPos[1]:
+				self.flailing = 0
+			else:
+				if sensorX1 >= colPos[0] and sensorX1 <= colPos[1]:
+					self.flailing = 1
+
+				if sensorX5 >= colPos[0] and sensorX5 <= colPos[1]:
+					self.flailing = 5
+
+
+				if sensorX4 >= colPos[0] and sensorX4 <= colPos[1]:
+					self.flailing = 4
+
+				if sensorX3 >= colPos[0] and sensorX3 <= colPos[1]:
+					self.flailing = 3
+
+
+				if sensorX2 >= colPos[0] and sensorX2 <= colPos[1]:
+					self.flailing = 2
+
+			return C_TOP
+
+		elif side == C_LEFT:
+			self.control_lock = 0
+			if (self.input_right and self.ground):
+				self.PUSH = True
+				#self.ground_speed = -0x8000
+
+			return C_LEFT
+		
+		elif side == C_RIGHT:
+			self.control_lock = 0
+			if (self.input_left and self.ground):
+				self.PUSH = True
+				#self.ground_speed = 0x8000
+			return C_RIGHT
+		
+		elif side == C_BOTTOM:
+			return C_BOTTOM
+		
+		else:
+			return C_NONE
+		
+
+	def Check_Object_Collision_Platform(self, self_hitbox, other_object:ObjectEntity, other_hitbox, set_values):
+		if super().Check_Object_Collision_Platform(self_hitbox, other_object, other_hitbox, set_values):
+		
+			self.controlLock = 0
+			self.collisionMode = G_MODE_FLOOR
+
+			other_object.position = vec2(other_object.position)
+
+			colPos = [
+				other_object.position.x + other_hitbox.left, 
+				 other_object.position.x + other_hitbox.right
+			]
+
+			sensorX1 = self.position.x + self.sensor_ROTATION_left.offsetx
+			sensorX2 = self.position.x + self.sensor_center_Down.offsetx
+			sensorX3 = self.position.x + self.sensor_ROTATION_right.offsetx
+
+			if sensorX1 >= colPos[0] and sensorX1 <= colPos[1] and sensorX3 >= colPos[0] and sensorX3 <= colPos[1]:
+				self.flailing = 0
+			else:
+				if sensorX1 >= colPos[0] and sensorX1 <= colPos[1]:
+					self.flailing = 1
+
+				if sensorX3 >= colPos[0] and sensorX3 <= colPos[1]:
+					self.flailing = 3
+
+				if sensorX2 >= colPos[0] and sensorX2 <= colPos[1]:
+					self.flailing = 2
+
+			return True
+
+		return False
+	
 
 	def get_ANGLE(self, detect=False):
 		self.sensor_UPDATE()
@@ -484,6 +542,7 @@ class PlayerBase(TiledObjectEntity):
 
 		
 	def sensor_UPDATE(self):
+		old_bottom = self.hitbox.bottom
 		if self.death_timer > 5:
 			self.Cancel_Sensor()
 		else:
@@ -491,7 +550,8 @@ class PlayerBase(TiledObjectEntity):
 				self.Rolling_Sensor()
 			else:
 				self.Normal_Sensor()
-		
+
+		if self.ground_speed: self.y += old_bottom -self.hitbox.bottom
 		wall_w = 20
 		self.sensor_climb = rect_to_dmask([min((wall_w+1)* self.facing, 0)+(wall_w/2), 0, 1, 1], self.position)
 		self.sensor_climb_up = rect_to_dmask([min((wall_w+1)* self.facing, 0)+(wall_w/2), -7-4, 1, 1], self.position)
@@ -500,7 +560,6 @@ class PlayerBase(TiledObjectEntity):
 
 	def Normal_Sensor(self):
 		# CENTER_POINT
-
 		# SENSOR
 
 		bottom = 20
@@ -532,8 +591,8 @@ class PlayerBase(TiledObjectEntity):
 			
 		offset_x_ground = min(0, self.facing)
 
-		self.rectbox = rect_to_rbox([left-2, top, width+3, height-1], self.position, self.box_type)
-		self.hitbox = rect(left-2, top, width+3, height-1)
+		self.rectbox = rect_to_rbox([left-2, top, width+3, height], self.position, self.box_type)
+		self.hitbox = rect(left-2, top-1, width+3, height)
 
 		self.sensor_Up = rect_to_dmask([left, top, width, 1], self.position)
 
@@ -607,7 +666,7 @@ class PlayerBase(TiledObjectEntity):
 		height = bottom-top
 
 		self.rectbox = rect_to_rbox([left-2, top, width+3, height-1], self.position, self.box_type)
-		self.hitbox = rect(left-2, top, width+3, height-1)
+		self.hitbox = rect(left-2, top, width+3, height)
 		self.sensor_Up = rect_to_dmask([left, top, width, 1], self.position)
 		self.sensor_Down = rect_to_dmask([left, bottom, width, 1], self.position)
 		self.sensor_Down_SHIFT = rect_to_dmask([left, bottom-1, width, 16 +abs(math.cos(math.radians(self.ground_angle ))*4)], self.position)

@@ -146,7 +146,7 @@ class DataMask:
 
 		if self.loopmax <= 0: return 0
 		while running:
-			if self.mask.overlap(dmask.mask, [dmask.x-self.x, dmask.y-(self.y-LOOP)]):
+			if self.mask.overlap(dmask.mask, [dmask.x-self.x, dmask.y-(self.y-(LOOP+1))]):
 
 				LOOP += 1
 			else: running = False
@@ -171,7 +171,7 @@ class DataMask:
 
 		if self.loopmax <= 0: return 0
 		while running:
-			if self.mask.overlap(dmask.mask, [dmask.x-(self.x-LOOP), dmask.y-self.y]): 
+			if self.mask.overlap(dmask.mask, [dmask.x-(self.x-(LOOP+1)), dmask.y-self.y]): 
 				LOOP += 1
 			else: running = False
 			if LOOP >= self.loopmax:running = False
@@ -197,7 +197,7 @@ class DataMask:
 
 		if self.loopmax <= 0: return 0
 		while running:
-			if self.mask.overlap(dmask.mask, [dmask.x-self.x, dmask.y-(self.y+LOOP)]):
+			if self.mask.overlap(dmask.mask, [dmask.x-self.x, dmask.y-(self.y+(LOOP+1))]):
 				LOOP += 1
 			else: running = False
 			if LOOP >= self.loopmax:running = False
@@ -223,7 +223,7 @@ class DataMask:
 
 		if self.loopmax <= 0: return 0
 		while running:
-			if self.mask.overlap(dmask.mask, [dmask.x-(self.x+LOOP), dmask.y-self.y]):
+			if self.mask.overlap(dmask.mask, [dmask.x-(self.x+(LOOP+1)), dmask.y-self.y]):
 				LOOP += 1
 			else: running = False
 			if LOOP >= self.loopmax:running = False

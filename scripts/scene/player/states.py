@@ -170,20 +170,31 @@ def player_state_normal(self:PlayerBase):
 	if (self.idle_timer > 160):
 		self.anim = ANIM_WAIT
 
+
+
 	# Ledge animation
 
 	if self.ground and self.ground_speed == 0:
-		pass
+		if self.flailing == 1 or self.flailing == 5:
+			self.anim = ANIM_LEDGE2
+			self.facing = (((self.flailing > 3) *2) - 1)
+			if self.player_id == CHAR_TAILS: self.facing *= -1
+
+		elif self.flailing == 2 or self.flailing == 4:
+			self.anim = ANIM_LEDGE1
+			self.facing = (((self.flailing < 3) *2) - 1) 
+
+			
 	
-	'''
-	if(!line_check(0, hitbox_h + 16, true) && !check_object(0, 0, 1, hitbox_h + 8, true) and self.ground and self.ground_speed == 0):
-		# Change animation
-		if(!line_check(hitbox_w, hitbox_h + 16, true) && !check_object(-wall_w, 0, wall_w, hitbox_h + 8, true)):
-			anim = facing = 1 ? ANIM.LEDGE2 : ANIM.LEDGE1;
-		
-		if(!line_check(-hitbox_w, hitbox_h + 16, true) && !check_object(wall_w, 0, -wall_w, hitbox_h + 8, true)):
-			anim = facing = -1 ? ANIM.LEDGE2 : ANIM.LEDGE1;
-	'''
+		'''
+		if(!line_check(0, hitbox_h + 16, true) && !check_object(0, 0, 1, hitbox_h + 8, true) and self.ground and self.ground_speed == 0):
+			# Change animation
+			if(!line_check(hitbox_w, hitbox_h + 16, true) && !check_object(-wall_w, 0, wall_w, hitbox_h + 8, true)):
+				anim = facing = 1 ? ANIM.LEDGE2 : ANIM.LEDGE1;
+			
+			if(!line_check(-hitbox_w, hitbox_h + 16, true) && !check_object(wall_w, 0, -wall_w, hitbox_h + 8, true)):
+				anim = facing = -1 ? ANIM.LEDGE2 : ANIM.LEDGE1;
+		'''
 
 	if (get_pressed(K_LEFT) or get_pressed(K_RIGHT)) and self.PUSH and self.ground:
 		self.anim = ANIM_PUSH
@@ -218,6 +229,7 @@ def player_state_jump(self:PlayerBase):
 
 		# Detach player off the ground and change state
 		self.ground = False
+		self.platform_standing = -1
 		self.state = ST_JUMP
 		self.deconnect_withOBJ()
 

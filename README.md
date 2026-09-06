@@ -4,7 +4,7 @@
 
 ## Ceci est encore un prototype
 - Il manque des fonctionnalité (
-      Collision entre Objets
+      Collision entre Objets ✓
   ).
   
 - Il y a beaucoup d'objet qui n'ont pas encore ajouté (

@@ -106,7 +106,7 @@ class ObjectEntity:
 		this_rect = pg.Rect(
 			int(other_object.position.x) + other_hitbox.left,
 			int(other_object.position.y+0.5) + other_hitbox.top,
-			other_hitbox.right - other_hitbox.left+1,
+			other_hitbox.right - other_hitbox.left,
 			other_hitbox.bottom - other_hitbox.top,
 		)
 
@@ -125,6 +125,8 @@ class ObjectEntity:
 		other_rect.top          += 1
 		other_rect.bottom       -= 1
 
+		this_rect.width += 1
+
 		if other_rect.centerx <= this_rect.centerx:
 			if this_rect.colliderect(other_rect):
 				collision_side_h = C_LEFT
@@ -139,6 +141,8 @@ class ObjectEntity:
 		self_hitbox.top        -= 1
 		self_hitbox.right      -= 1
 		self_hitbox.bottom     += 1
+
+		this_rect.width 	   -= 1
 
 		#--------------------------------------------
 		# Vertical collision

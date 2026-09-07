@@ -1,25 +1,25 @@
 {
     "activeFile": "Maps/STZ1/map.tmj",
     "expandedProjectPaths": [
-        ".",
-        "Maps/TZ1/Sprites",
-        "Maps/TTZ1",
-        "Maps/TZ1",
-        "Maps/C1/Z1",
-        "Maps/C1",
-        "Maps/Chap1",
-        "Sprites",
         "Template",
-        "Maps/Z1",
+        "Maps/Chap1",
         "Maps",
-        "Maps/Globals",
-        "Maps/Global",
-        "Maps/C1/TZ1",
+        "Sprites",
+        "Maps/C1",
         "Maps/Chap1/TZ1",
-        "Sprites/Players",
-        "Maps/C1Z1",
+        "Maps/Z1",
         "Sprites/Editor",
-        "Template/swap_layer"
+        ".",
+        "Maps/Globals",
+        "Maps/TTZ1",
+        "Template/swap_layer",
+        "Maps/C1/Z1",
+        "Maps/C1/TZ1",
+        "Sprites/Players",
+        "Maps/TZ1",
+        "Maps/C1Z1",
+        "Maps/Global",
+        "Maps/TZ1/Sprites"
     ],
     "fileStates": {
         "": {
@@ -109,15 +109,15 @@
             "scaleInEditor": 1
         },
         "Maps/STZ1/Tiles.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 2,
             "scaleInEditor": 1
         },
         "Maps/STZ1/map.tmj": {
-            "scale": 0.75,
-            "selectedLayer": 1,
+            "scale": 1.5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 576,
-                "y": 145.99999999999994
+                "x": 306,
+                "y": 95.66666666666663
             }
         },
         "Maps/Sprites/Editor/Editor.tsx": {

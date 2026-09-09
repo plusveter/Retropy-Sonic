@@ -101,7 +101,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":48,
+         "width":32,
          "x":0,
          "y":0
         }, 
@@ -113,8 +113,68 @@
                 {
                  "id":3,
                  "template":"..\/..\/Template\/player\/sonic.tx",
-                 "x":256,
-                 "y":-160
+                 "x":320,
+                 "y":64
+                }, 
+                {
+                 "height":32,
+                 "id":329,
+                 "name":"spikes_top",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spikes",
+                 "visible":true,
+                 "width":32,
+                 "x":448,
+                 "y":80
+                }, 
+                {
+                 "height":16,
+                 "id":330,
+                 "name":"ring",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Ring",
+                 "visible":true,
+                 "width":16,
+                 "x":304,
+                 "y":80
+                }, 
+                {
+                 "height":32,
+                 "id":331,
+                 "name":"spikes_right",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spikes",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":32
+                }, 
+                {
+                 "height":32,
+                 "id":332,
+                 "name":"spikes_bottom",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spikes",
+                 "visible":true,
+                 "width":32,
+                 "x":352,
+                 "y":0
+                }, 
+                {
+                 "height":32,
+                 "id":333,
+                 "name":"spikes_left",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spikes",
+                 "visible":true,
+                 "width":32,
+                 "x":96,
+                 "y":32
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -123,7 +183,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":328,
+ "nextobjectid":334,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

@@ -109,6 +109,7 @@
             "scaleInEditor": 1
         },
         "Maps/STZ1/Tiles.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 2,
             "scaleInEditor": 1
         },

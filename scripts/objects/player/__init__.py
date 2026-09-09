@@ -18,7 +18,7 @@ from .collision import player_collision
 from .misc import player_misc
 from .direction import player_direction
 from .visual_angle import player_visual_angle
-#from .handle_hurt import player_handle_hurt
+from .handle_hurt import player_handle_hurt
 from .handle_camera import player_handle_camera
 from .macros import *
 
@@ -100,7 +100,7 @@ class Player(PlayerBase):
 		self.flailing = 0
 		self.sensor_UPDATE()
 		
-		#player_handle_hurt(self)
+		player_handle_hurt(self)
 		
 		player_visual_angle(self)
 		player_misc(self)

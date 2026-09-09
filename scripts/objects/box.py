@@ -18,7 +18,7 @@ class Box(TiledObjectEntity):
 
             
             if player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, 1):
-                color = 8
+                if color != 16 : color = 8
 
                 if player.platform_standing == -1 :
                     

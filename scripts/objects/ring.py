@@ -4,6 +4,7 @@ from .player import Player
 class Ring(TiledObjectEntity):
     def __init__(self, objectid = -1):
         super().__init__(objectid)
+        self.type = 0
         self.death_timer = 0
         self.isDone = False
         self.sparkles = AnimationTracker()

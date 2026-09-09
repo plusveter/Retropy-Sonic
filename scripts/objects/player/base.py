@@ -191,7 +191,7 @@ class PlayerBase(TiledObjectEntity):
 		self.jump_anim_speed = 0
 		self.landed = False
 		self.steps = 1
-		self.hurt_position = 0
+		self.hurt_position = vec2(0)
 		self.is_time_over = 0
 
 		self.state = 0
@@ -236,7 +236,7 @@ class PlayerBase(TiledObjectEntity):
 		return self.input_a or self.input_b
 
 	def deconnect_withOBJ(self):
-		self.on_object = -1
+		self.platform_standing = -1
 	
 	def is_connected_withOBJ(self):
 		return self.on_object == -1

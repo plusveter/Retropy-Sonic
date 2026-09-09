@@ -96,6 +96,8 @@ class General:
             camera.center_x = objectdata["x"]
             camera.center_y = objectdata["y"]
 
+        camera.mode = CAM_NORMAL
+
     def update(self):
         # rings
         general.ring_tracker.handle_animation_by_name(general.dynamic_sprites, "Normal Ring")

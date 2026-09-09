@@ -13,7 +13,7 @@ class Ring(TiledObjectEntity):
         super().update()
         graphic.palette = P_OBJECTS
         debug = 0
-        rbox = rect_to_rbox([8, 8+self.tiled_offset.y, self.tiled_width, self.tiled_height], self.position, self.id)
+        self.hitbox = rect([8, 8+self.tiled_offset.y, self.tiled_width, self.tiled_height])
 
         if self.type == "lose":
             chunk_mask = tiledmap.get_chunk_datamask(self.position.x, self.position.y+self.height, 2, 1)
@@ -56,7 +56,7 @@ class Ring(TiledObjectEntity):
                 self.draw(-self.position + vec2(chunk_mask.x, chunk_mask.y))
 
         for player in check_object(Player):
-            if rbox.overlap(player.rectbox) and (not self.type in ["sparkles", "lose"] or self.death_timer > 50) and not self.isDone:
+            if self.Check_Object_Collision_Box(self.hitbox, player, player.hitbox, 0) and (not self.type in ["sparkles", "lose"] or self.death_timer > 50) and not self.isDone:
                 self.delete()
                 general.rings += 1
                 play_sound(general.SFX_Ring)
@@ -69,13 +69,13 @@ class Ring(TiledObjectEntity):
             if self.sparkles.has_looped: self.kill()
             else:
                 prerender_name_sprite(general.dynamic_sprites, Animation_, self.sparkles)
-                self.draw(rbox.offset)
+                self.draw(vec2(self.hitbox.x, self.hitbox.y))
 
 
         # Check if object is a spakles, otherwise it render the ring sprite
 
         if  (self.death_timer < 130 or (self.death_timer%2) == 0) and not self.isDone:
             prerender_name_sprite(general.dynamic_sprites, "Normal Ring", general.ring_tracker)
-            self.draw(rbox.offset)
+            self.draw(vec2(self.hitbox.x, self.hitbox.y))
     
     

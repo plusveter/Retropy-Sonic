@@ -33,7 +33,6 @@ class PlayerBase(TiledObjectEntity):
 		self.palettes = {}
 
 		self.box_type = 0
-		self.rectbox = rect_to_rbox([0, 0, 0, 0], self.position, self.box_type)
 
 
 		self.left_rot = pygame.Rect(0, 0, 0, 0)
@@ -591,7 +590,6 @@ class PlayerBase(TiledObjectEntity):
 			
 		offset_x_ground = min(0, self.facing)
 
-		self.rectbox = rect_to_rbox([left-2, top, width+3, height], self.position, self.box_type)
 		self.hitbox = rect(left-2, top-1, width+3, height)
 
 		self.sensor_Up = rect_to_dmask([left, top, width, 1], self.position)
@@ -665,7 +663,6 @@ class PlayerBase(TiledObjectEntity):
 		width = right-left+1
 		height = bottom-top
 
-		self.rectbox = rect_to_rbox([left-2, top, width+3, height-1], self.position, self.box_type)
 		self.hitbox = rect(left-2, top, width+3, height)
 		self.sensor_Up = rect_to_dmask([left, top, width, 1], self.position)
 		self.sensor_Down = rect_to_dmask([left, bottom, width, 1], self.position)
@@ -702,7 +699,6 @@ class PlayerBase(TiledObjectEntity):
 
 	def Cancel_Sensor(self):
 
-		self.rectbox = rect_to_rbox([0, 0, 0, 0], self.position, self.box_type)
 		self.hitbox = rect(0, 0, 0, 0)
 		self.sensor_center_Down = rect_to_dmask([0, 0, 0, 0], self.position)
 		self.sensor_Down = rect_to_dmask([0, 0, 0, 0], self.position)

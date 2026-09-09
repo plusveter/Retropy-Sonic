@@ -1,5 +1,5 @@
 from scripts.base import *
-from scripts import scene
+from scripts import objects
 
 # FR: Meilleur outil quand j'ai envis de faire quelque chose de beaux dans le code
 global game_control, debug_mouse
@@ -113,7 +113,7 @@ def game_control():
     if pygame.mouse.get_pressed()[2]: 
         i = (kernel.frames*(math.pi)*2)+(kernel.frames)
 
-        effect = scene.WaterEffect()
+        effect = objects.WaterEffect()
         effect.layerid = 3
         effect.animation = "Large Bubble"
         effect.position = (

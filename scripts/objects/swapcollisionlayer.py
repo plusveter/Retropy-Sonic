@@ -24,7 +24,7 @@ class SwapCollisionLayer(TiledObjectEntity):
         self.handle_direction()
 
         # make a new rectbox which is basically a rect
-        rectbox  = rect_to_rbox([0, -self.tiled_height * (self.tiled_gid > 0), self.tiled_width, self.tiled_height], self.position, self.tiled_id)
+        self.hitbox = rect([0, -self.tiled_height * (self.tiled_gid > 0), self.tiled_width, self.tiled_height])
 
         # draw on screen the rectbox
         #render_rect(rectbox.rect, [255, 128, 0], special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)
@@ -39,7 +39,7 @@ class SwapCollisionLayer(TiledObjectEntity):
             if (player.ground_layer == self.specific_layerid) or (self.specific_layerid == -1): continue # this help skip in the loop 
 
             # look for collision between the two
-            if player.rectbox.overlap(rectbox): player.ground_layer = self.specific_layerid
+            if self.Check_Object_Collision_Box(self.hitbox, player, player.hitbox, 0): player.ground_layer = self.specific_layerid
 
     def handle_direction(self):
         if self.tiled_name == "direction_up": 

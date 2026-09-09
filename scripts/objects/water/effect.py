@@ -1,5 +1,5 @@
 from scripts.base import *
-from scripts.scene.player.macros import *
+from scripts.objects.player.macros import *
 
 class WaterEffect(TiledObjectEntity):
     def __init__(self, objectid = -1):
@@ -58,11 +58,11 @@ class WaterEffect(TiledObjectEntity):
                     if self.time_to_live <= 0:
                         self.kill()
                 else:
-                    boxrect = rect_to_rbox([-12, -12, 24, 24], self.position, self.id)
+                    self.hitbox = rect([-12, -12, 24, 24])
 
                     for player in check_object_by_classname('Player'):
-                        collide = boxrect.overlap(player.rectbox)
-                        if collide and abs(self.position.y - self.static.y) > player.rect.height+15:
+                        collide = self.Check_Object_Collision_Box(self.hitbox, player, player.hitbox, 0)
+                        if collide and abs(self.position.y - self.static.y) > player.bound.height+15:
                             self.value = 1
                             player.air = 0
                             player.speed = vec2(0, 0)

@@ -1,4 +1,3 @@
-from .rectbox import RectBox
 from .datamask import DataMask
 import pygame as pg
 import numpy as np
@@ -7,46 +6,6 @@ import numpy as np
 #-[ NOTE ]-------------------------------------------------------------------------------
 # This is a bunch of code i made, takken from the last version of the previous iterations
 #----------------------------------------------------------------------------------------
-
-
-# Global Variables used to manage the duplication of RectBox ID's
-new_objectid = 0
-num_objectid = 0
-
-# This is rect box side
-def point_to_rbox(point:list[int], position:list[int], objectid:int, rbox_key:int=0) -> RectBox:
-    global new_objectid, num_objectid
-
-    if new_objectid == objectid: num_objectid += 1
-    else: new_objectid = objectid; num_objectid = 0
-
-    """
-    **Make RectBox using a point**
-    >>> rect_to_dmask([offsetx, offsety], [parentx, parenty], objectid, rbox_key)
-    >>> rect_to_dmask(point, position, objectid, rbox_key)
-    """
-    return RectBox([point[0], point[1], 1, 1], position, int(((new_objectid*10)+num_objectid)), rbox_key)
-
-def rect_to_rbox(offsetrect:list[int], position:list[int], objectid:int, rbox_key:int=0) -> RectBox:
-    global new_objectid, num_objectid
-    if new_objectid == objectid: num_objectid += 1
-    else: new_objectid = objectid; num_objectid = 0
-    
-    return RectBox([
-					int(position[0]), #0
-					int(position[1]), #1
-
-					offsetrect[0], #2
-					offsetrect[1], #3
-					offsetrect[2], #4
-					offsetrect[3],  #5
-
-					int(((new_objectid*10)+num_objectid)), #6
-
-					rbox_key
-
-				])
-
 
 # Setup the mask side
 def point_to_dmask(point:list[int], position:list[int]) -> DataMask:

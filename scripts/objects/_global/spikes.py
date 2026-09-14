@@ -2,7 +2,7 @@ from scripts.base import *
 from ..player.util import player_hurt
 
 class Spikes(TiledObjectEntity):
-    name_tranform = {
+    namedatas = {
         "spikes_top":       dict(frame=0, flipH=False, flipV=False),
         "spikes_bottom":    dict(frame=0, flipH=True, flipV=False),
         "spikes_left":      dict(frame=1, flipH=False, flipV=True),
@@ -15,7 +15,7 @@ class Spikes(TiledObjectEntity):
         graphic.palette = P_OBJECTS
 
         self.hitbox = rect(self.tiled_offset.x, self.tiled_offset.y, self.tiled_width, self.tiled_height)
-        transform = self.name_tranform.get(self.tiled_name, -1)
+        transform = self.namedatas.get(self.tiled_name, -1)
         
         color = 1
         for player in check_object_by_classname("Player"):

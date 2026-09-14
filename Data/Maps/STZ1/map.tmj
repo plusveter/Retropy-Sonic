@@ -17,7 +17,7 @@
                 }],
          "opacity":0.51,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -25,19 +25,7 @@
          "draworder":"topdown",
          "id":6,
          "name":"Object Layer 3",
-         "objects":[
-                {
-                 "height":48,
-                 "id":13,
-                 "name":"Box",
-                 "opacity":1,
-                 "rotation":0,
-                 "type":"Box",
-                 "visible":true,
-                 "width":240,
-                 "x":-32,
-                 "y":64
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -54,16 +42,37 @@
                  "y":0
                 }, 
                 {
-                 "data":"KLUv\/WAAA6UAABAAAQUA2SUoHIIKBSfADj1eVMcG",
+                 "data":"KLUv\/WAAA6UAABAAAQUAPaAgYAgqFJwAO\/R4UR0b",
                  "height":16,
                  "width":16,
                  "x":16,
                  "y":0
+                }, 
+                {
+                 "data":"KLUv\/WAAA5UAABAAAQQAAUNQoeAE2KHHh8qxAQ==",
+                 "height":16,
+                 "width":16,
+                 "x":0,
+                 "y":16
+                }, 
+                {
+                 "data":"KLUv\/WAAA90AABAAAQiAgB\/ZpeIQqOLO3aUaAqrgHHYovKiOBA==",
+                 "height":16,
+                 "width":16,
+                 "x":16,
+                 "y":16
+                }, 
+                {
+                 "data":"KLUv\/WAAA6UAABAAAQUAPaAgYAgqFJwAO\/R4UR0b",
+                 "height":16,
+                 "width":16,
+                 "x":32,
+                 "y":16
                 }],
          "class":"CollisionA",
          "compression":"zstd",
          "encoding":"base64",
-         "height":16,
+         "height":32,
          "id":2,
          "name":"CollisionA",
          "opacity":1,
@@ -71,7 +80,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":32,
+         "width":48,
          "x":0,
          "y":0
         }, 
@@ -90,10 +99,31 @@
                  "width":16,
                  "x":16,
                  "y":0
+                }, 
+                {
+                 "data":"KLUv\/WAAA+UEAEJGEhrAJY0B\/w9Mw+XUJmQTXtBAjZDNm8v\/z1RKAZYX5eUcOU8SHUHmjma6ObdDJp06yq3cJLfkSD\/6cW7cwaAXBLqhF3ohDAIAJwwloGFJNFZxq7UDoIIjaAcQABZvEA2gE4EpTohkELIRiWAbDTyNDA5ZDY5Bt9lBpp3hlOVwNeCWUTuEJd4DyfIN4syNukG8edSZIUxNgVEpHQ==",
+                 "height":16,
+                 "width":16,
+                 "x":0,
+                 "y":16
+                }, 
+                {
+                 "data":"KLUv\/WAAA30GAFLHFR6gKY0B83azMEALNVpz3vF6f2vOiXeSfxX4\/78BKQVKrQhaE7V09UQiHTJnzJeEQkfoEP2hP+ZJ4snOnVvoTjpP+kE36IXz5gR6ozsaOkNn9IUwCABcMTmoEc5A5JKWqwFgAlKl3RFwBAYChc6JECaz\/7VnA\/nesi5n\/+0\/ZuN\/eozu\/0fDh\/ip2WR9e5hdgQ6iwzByco48eS7ByN1cT8EPOlg3doF\/cfxhCJt3fN+q9H8jGkfESucpeSHDHX3C3shUf7a5aciqAFQhDA==",
+                 "height":16,
+                 "width":16,
+                 "x":16,
+                 "y":16
+                }, 
+                {
+                 "data":"KLUv\/WAAA\/UEAEJGEhrAJY0B\/w9Mw+XUJmQTXtBAjZDNm8v\/z1RKAZYX5eUcOU8SHUHmjma6ObdDJp06yq3cJLfkSD\/6cW7cwaAXBLqhF3ohDAIAJwwmoHFJNEZxq7UDoIIjaAcNlOLEYLxPPIJnA6c4EMFBCEYgctsw8DwyNGRsdAy1zQ0y7AymfOfV0FqG7pCWfI8knzeOe27QAfmmUfcMCWoGgErB",
+                 "height":16,
+                 "width":16,
+                 "x":32,
+                 "y":16
                 }],
          "compression":"zstd",
          "encoding":"base64",
-         "height":16,
+         "height":32,
          "id":1,
          "name":"Forward",
          "opacity":1,
@@ -101,7 +131,7 @@
          "starty":0,
          "type":"tilelayer",
          "visible":true,
-         "width":32,
+         "width":48,
          "x":0,
          "y":0
         }, 
@@ -125,8 +155,8 @@
                  "type":"Spikes",
                  "visible":true,
                  "width":32,
-                 "x":448,
-                 "y":80
+                 "x":368,
+                 "y":336
                 }, 
                 {
                  "height":16,
@@ -149,8 +179,8 @@
                  "type":"Spikes",
                  "visible":true,
                  "width":32,
-                 "x":128,
-                 "y":32
+                 "x":0,
+                 "y":-32
                 }, 
                 {
                  "height":32,
@@ -161,8 +191,8 @@
                  "type":"Spikes",
                  "visible":true,
                  "width":32,
-                 "x":352,
-                 "y":0
+                 "x":0,
+                 "y":80
                 }, 
                 {
                  "height":32,
@@ -173,8 +203,116 @@
                  "type":"Spikes",
                  "visible":true,
                  "width":32,
-                 "x":96,
-                 "y":32
+                 "x":32,
+                 "y":-112
+                }, 
+                {
+                 "height":224,
+                 "id":338,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":48,
+                 "x":720,
+                 "y":144
+                }, 
+                {
+                 "height":64,
+                 "id":339,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":64,
+                 "x":656,
+                 "y":304
+                }, 
+                {
+                 "height":32,
+                 "id":340,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":96,
+                 "x":544,
+                 "y":208
+                }, 
+                {
+                 "height":32,
+                 "id":342,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":32,
+                 "x":544,
+                 "y":176
+                }, 
+                {
+                 "height":48,
+                 "id":343,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":32,
+                 "x":688,
+                 "y":256
+                }, 
+                {
+                 "height":32,
+                 "id":344,
+                 "name":"red_spring_up",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":224,
+                 "y":80
+                }, 
+                {
+                 "height":32,
+                 "id":345,
+                 "name":"red_spring_down",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":480,
+                 "y":16
+                }, 
+                {
+                 "height":32,
+                 "id":346,
+                 "name":"red_spring_left",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":400,
+                 "y":336
+                }, 
+                {
+                 "height":32,
+                 "id":347,
+                 "name":"red_spring_right",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":624,
+                 "y":336
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -183,7 +321,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":334,
+ "nextobjectid":348,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

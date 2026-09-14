@@ -82,13 +82,13 @@ class ObjectEntity:
 
 		self.platform_position += self.speed.x
 		
-		self.x -= int(self_rect.right - other_rect.left - 2) - int(self.platform_position)
+		self.x -= int(self_rect.right - other_rect.left) - int(self.platform_position)
 		self.y -= int(self_rect.bottom - other_rect.top + 0.5) 
 
-		if self.platform_position < 1-2: 
+		if self.platform_position < 1: 
 			self.platform_standing = -1
 			
-		elif self.platform_position > (self_rect.width + other_rect.width)-2: 
+		elif self.platform_position > (self_rect.width + other_rect.width): 
 			self.platform_standing = -1
 		return 1
 
@@ -233,7 +233,7 @@ class ObjectEntity:
 		this_ix = int(other_object.position.x)
 		this_iy = int(other_object.position.y+0.5)
 
-		other_ix = int(self.position.x)
+		other_ix = int(self.position.x)-1
 		other_iy = int(self.position.y+0.5)
 
 		other_move_y = int(self.position.y - self.speed.y)
@@ -244,7 +244,7 @@ class ObjectEntity:
 			(   other_iy + self_hitbox.bottom > this_iy + other_hitbox.top and
 				other_move_y + self_hitbox.bottom < this_iy + other_hitbox.bottom and
 				this_ix + other_hitbox.left < other_ix + self_hitbox.right and
-				this_ix + other_hitbox.right > other_ix + self_hitbox.left) and 
+				this_ix + other_hitbox.right-1 > other_ix + self_hitbox.left) and 
 
 			self.speed.y >= 0
 		):

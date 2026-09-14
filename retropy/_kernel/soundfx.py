@@ -1,5 +1,8 @@
 import pygame
 
+def get_volume(self):
+    MIXERSCALE = self.kernel.mixerscale
+    return self.distinct_volume * self.volume / (MIXERSCALE)+0.001
 
 
 class SoundFX:
@@ -7,18 +10,12 @@ class SoundFX:
         self.kernel = kernel
         self.id = 0
         self.volume = 0
+        self.distinct_volume = 1
         self.channels:dict[str, dict[str:"channels", pygame.mixer.Channel]] = {}
-        self.pre_volume = -1
 
         self.current_channel = -1
 
-    def refresh(self):
-        MIXERSCALE = self.kernel.mixerscale
-        if self.pre_volume != self.volume:
-            for channel_name in self.channels:
-                self.channels[channel_name]["channel"].set_volume(self.volume/ (MIXERSCALE)+0.001)
-
-        self.pre_volume = self.volume
+    def refresh(self): ...
 
 
     def new_channel(self, name:str):
@@ -29,20 +26,22 @@ class SoundFX:
             volumes = dict(left=1, right=1)
         )
 
-        self.channels[name]["channel"].set_volume(self.volume/ (self.kernel.mixerscale)+0.001)
         self.id += 1
 
     def select_channel(self, name):
         if self.channels.get(name):     self.current_channel = name
         else:                           self.current_channel = -1
 
-    def play(self, sound:pygame.mixer.Sound, loop = False, name:str=None):
-        MIXERSCALE = self.kernel.mixerscale
+    def play(self, sound:pygame.mixer.Sound, loop = False, name:str=None, volume:int = None):
         if name is None: name = self.current_channel
+        if not volume is None: self.distinct_volume = int(volume)
+        
         if self.current_channel == -1: 
-            sound.set_volume(self.volume/ (MIXERSCALE)+0.001)
+            sound.set_volume(get_volume(self))
             sound.play(loops=loop)
-        else: self.channels[name]["channel"].play(sound, loops=loop)
+        else: 
+            self.channels[name]["channel"].set_volume(get_volume(self))
+            self.channels[name]["channel"].play(sound, loops=loop)
     
     def stop(self, channel_name):
         self.channels[channel_name]["channel"].stop()

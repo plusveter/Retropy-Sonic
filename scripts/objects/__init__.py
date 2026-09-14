@@ -23,5 +23,3 @@ tiledmap.add_objectclass(SetWaterHeight)
 
 from ._global import *
 
-tiledmap.add_objectclass(Spikes)
-

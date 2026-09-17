@@ -112,7 +112,7 @@ class ObjectEntity:
 
 		other_rect = pg.Rect(
 			int(self.position.x) + self_hitbox.left,
-			int(self.position.y+0.5) + self_hitbox.top,
+			int(self.position.y+1) + self_hitbox.top,
 			self_hitbox.right - self_hitbox.left,
 			self_hitbox.bottom - self_hitbox.top,
 		)
@@ -234,7 +234,7 @@ class ObjectEntity:
 		this_iy = int(other_object.position.y+0.5)
 
 		other_ix = int(self.position.x)-1
-		other_iy = int(self.position.y+0.5)
+		other_iy = int(self.position.y+1)
 
 		other_move_y = int(self.position.y - self.speed.y)
 

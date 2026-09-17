@@ -590,7 +590,7 @@ class PlayerBase(TiledObjectEntity):
 			
 		offset_x_ground = min(0, self.facing)
 
-		self.hitbox = rect(left-2, top-1, width+3, height)
+		self.hitbox = rect(left-2, top, width+3, height)
 
 		self.sensor_Up = rect_to_dmask([left, top, width, 1], self.position)
 

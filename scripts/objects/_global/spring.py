@@ -3,21 +3,34 @@ from ..player.util import player_hurt
 from ..player import macros as player_macros
 
 class Spring(TiledObjectEntity):
-    yellow_strenght     = 10
-    red_strenght        = 10
     diagonal_yield      = 0.725
 
+    color_data = list((
+         dict(name="Red"        , strenght=16),
+         dict(name="Yellow"     , strenght=10)
+    ))
+
     namedatas = dict(
-        red_spring_up           = dict(state="vertical"     , color = "red"     , flip=0),
-        red_spring_down         = dict(state="vertical"     , color = "red"     , flip=1),
-        red_spring_left         = dict(state="horizontal"   , color = "red"     , flip=1),
-        red_spring_right        = dict(state="horizontal"   , color = "red"     , flip=0),
+        red_spring_up           = dict(state="vertical"     , color = 0     , flip=0),
+        red_spring_down         = dict(state="vertical"     , color = 0     , flip=1),
+        red_spring_left         = dict(state="horizontal"   , color = 0     , flip=1),
+        red_spring_right        = dict(state="horizontal"   , color = 0     , flip=0),
+ 
+        red_spring_upleft       = dict(state="diagonal"     , color = 0     , flip=0),
+        red_spring_downleft     = dict(state="diagonal"     , color = 0     , flip=1),
+        red_spring_downright    = dict(state="diagonal"     , color = 0     , flip=2),
+        red_spring_upright      = dict(state="diagonal"     , color = 0     , flip=3),
 
-        red_spring_upleft       = dict(state="diagonal"     , color = "red"     , flip=0),
-        red_spring_downleft     = dict(state="diagonal"     , color = "red"     , flip=1),
-        red_spring_downright    = dict(state="diagonal"     , color = "red"     , flip=2),
-        red_spring_upright      = dict(state="diagonal"     , color = "red"     , flip=3),
 
+        yellow_spring_up           = dict(state="vertical"     , color = 1     , flip=0),
+        yellow_spring_down         = dict(state="vertical"     , color = 1     , flip=1),
+        yellow_spring_left         = dict(state="horizontal"   , color = 1     , flip=1),
+        yellow_spring_right        = dict(state="horizontal"   , color = 1     , flip=0),
+ 
+        yellow_spring_upleft       = dict(state="diagonal"     , color = 1     , flip=0),
+        yellow_spring_downleft     = dict(state="diagonal"     , color = 1     , flip=1),
+        yellow_spring_downright    = dict(state="diagonal"     , color = 1     , flip=2),
+        yellow_spring_upright      = dict(state="diagonal"     , color = 1     , flip=3),
     )
 
     offset_array = numpy.array(
@@ -27,10 +40,8 @@ class Spring(TiledObjectEntity):
 
     def __init__(self, objectid = -1):
         super().__init__(objectid)
-        self.bounce_tracker = AnimationTracker()
+        self.bounce_tracker = AnimationTracker(loop=2)
 
-
-    
     def update(self):
         super().update()
         graphic.palette = P_OBJECTS
@@ -41,11 +52,8 @@ class Spring(TiledObjectEntity):
         if namedata != -1:
             state = namedata["state"]
 
-            strenght = 0
-            color = "Red"
-            if namedata["color"] == "red":      strenght = self.red_strenght; color = "Red"
-            elif namedata["color"] == "yellow": strenght = self.yellow_strenght; color = "Yellow"
-
+            strenght = self.color_data[namedata["color"]]["strenght"]
+            color = self.color_data[namedata["color"]]["name"]
             flip = namedata["flip"]
 
             if state == "horizontal": self.state_horizontal(strenght, flip, color)
@@ -81,6 +89,7 @@ class Spring(TiledObjectEntity):
                         player.jump_flag = False
                         player.state = player_macros.ST_SPRING_H
                         play_sound(general.SFX_Spring)
+                        self.bounce_tracker.loop = 0
 
                 elif side == C_BOTTOM and flip == 1:
                         player.ground_angle = 0
@@ -88,10 +97,13 @@ class Spring(TiledObjectEntity):
                         player.jump_flag = False
                         player.state = player_macros.ST_SPRING_D
                         play_sound(general.SFX_Spring)
+                        self.bounce_tracker.loop = 0
 
         self.hitbox.height  += 16
         if not flip: self.hitbox.top -= 16
 
+        if self.bounce_tracker.loop > 0: self.bounce_tracker.frame = 0
+        else: self.bounce_tracker.handle_animation_by_name(general.dynamic_sprites, color+" VerticalSpring")
         prerender_name_sprite(general.dynamic_sprites, color+" VerticalSpring", self.bounce_tracker)
         apply_flip_on_prerender(flipY=flip)
         self.draw(vec2(self.hitbox.center))
@@ -117,15 +129,19 @@ class Spring(TiledObjectEntity):
                         player.speed.x  = -strenght
                         player.ground_speed = -strenght
                         play_sound(general.SFX_Spring)
+                        self.bounce_tracker.loop = 0
 
                 elif side ==  C_RIGHT and flip == 1:
                         player.speed.x  = strenght
                         player.ground_speed = strenght
                         play_sound(general.SFX_Spring)
+                        self.bounce_tracker.loop = 0
 
         self.hitbox.width  += 16
         if not flip: self.hitbox.left -= 16
 
+        if self.bounce_tracker.loop > 0: self.bounce_tracker.frame = 0
+        else: self.bounce_tracker.handle_animation_by_name(general.dynamic_sprites, color+" HorizontalSpring")
         prerender_name_sprite(general.dynamic_sprites, color+" HorizontalSpring", self.bounce_tracker)
         apply_flip_on_prerender(flipX=(not flip))
         self.draw(vec2(self.hitbox.center))
@@ -189,9 +205,14 @@ class Spring(TiledObjectEntity):
                 player.state = player_macros.ST_SPRING_D
                 player.facing = -direction.y
                 play_sound(general.SFX_Spring)
+                self.bounce_tracker.loop = 0
 
             self.hitbox.top -= offset_array[int(offset_index)] -1
-             
+
+
+        if self.bounce_tracker.loop > 0: self.bounce_tracker.frame = 0
+        else: self.bounce_tracker.handle_animation_by_name(general.dynamic_sprites, color+" DiagonalSpring")
+
         prerender_name_sprite(general.dynamic_sprites, color+" DiagonalSpring", self.bounce_tracker)
 
         apply_flip_on_prerender(flipX=min(direction.x, 0), flipY=min(-direction.y, 0))

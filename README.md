@@ -1,6 +1,7 @@
  # RETROPY Framework
 
  > **RETROPY** est une base personnel visant à reproduire l'essenciel d'une jeu sonic sur le language python. C'est un projet sur lequel **je travaille depuis Novembre 2021**, à noté que le Développement de **cette version à débuté le 17 Juin 2026**
+
 > ## Important
 > - La compatibilité que ce soit sur d'autre appareil ou matérielle, n'a pas été pris en compte initialement.
 > - Ce projet n'a aucune afiliation avec SEGA. 

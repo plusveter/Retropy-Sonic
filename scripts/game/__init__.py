@@ -34,7 +34,6 @@ def run():
     kernel.palette.new(P_BACKGROUND     )
 
 
-
     # initilisation of shaders params
     filter_text1 = kernel.opengl.surf_to_texture(datapack.load_imagefile(SHADERFOLDER+"textures/crt.jpg"))
     kernel.opengl.use_texture(texture=filter_text1, name="uFilter")

@@ -13,9 +13,14 @@ class Character:
 	def rendering(self:PlayerBase):
 		self.animation_tracker.handle_animation_by_name(self.sprites, self.anim)
 		self.animation_has_finished = self.animation_tracker.has_looped
+
 		if self.tails_appears:
 			self.tails_animation_tracker.handle_animation_by_name(self.sprites, self.tails_anim)
-
+		
+		set_palette_at(2, kernel.palette.get_array(P_PLAYERS)[(0x10 + 3*self.player_id)], P_PLAYERS)
+		set_palette_at(3, kernel.palette.get_array(P_PLAYERS)[(0x11 + 3*self.player_id)], P_PLAYERS)
+		set_palette_at(4, kernel.palette.get_array(P_PLAYERS)[(0x12 + 3*self.player_id)], P_PLAYERS)
+		
 		prerender_name_sprite(self.sprites, self.anim, self.animation_tracker)
 
 		apply_flip_on_prerender(flipX=min(0, self.facing))

@@ -313,6 +313,115 @@
                  "width":32,
                  "x":624,
                  "y":336
+                }, 
+                {
+                 "height":32,
+                 "id":348,
+                 "name":"red_spring_upleft",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":144,
+                 "y":32
+                },
+            
+                {
+                 "height":32,
+                 "id":349,
+                 "name":"red_spring_downleft",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":144,
+                 "y":64
+                }, 
+                {
+                 "height":32,
+                 "id":350,
+                 "name":"red_spring_downright",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":112,
+                 "y":64
+                }, 
+                {
+                 "height":32,
+                 "id":351,
+                 "name":"red_spring_upright",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":112,
+                 "y":32
+                }, 
+                {
+                 "height":32,
+                 "id":352,
+                 "name":"red_spring_upleft",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":512,
+                 "y":112
+                }, 
+                {
+                 "height":48,
+                 "id":354,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":288,
+                 "x":768,
+                 "y":144
+                }, 
+                {
+                 "height":32,
+                 "id":355,
+                 "name":"red_spring_upright",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":528,
+                 "y":-16
+                }, 
+                {
+                 "height":208,
+                 "id":356,
+                 "name":"Box",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Box",
+                 "visible":true,
+                 "width":48,
+                 "x":1056,
+                 "y":-16
+                }, 
+                {
+                 "height":32,
+                 "id":357,
+                 "name":"red_spring_upright",
+                 "opacity":1,
+                 "rotation":0,
+                 "type":"Spring",
+                 "visible":true,
+                 "width":32,
+                 "x":1024,
+                 "y":112
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -321,8 +430,14 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":348,
+ "nextobjectid":358,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"music_name",
+         "type":"string",
+         "value":"S3D_Blast - PANIC PUPPET ACT 1 (Rock Cover)"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.12.2",
  "tileheight":16,

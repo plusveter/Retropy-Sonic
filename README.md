@@ -8,15 +8,16 @@
   ).
   
 - Il y a beaucoup d'objet qui n'ont pas encore ajouté (
-      Springs,
+      Springs ✓,
       Bridges,
       MotoBugs,
-      Spikes,
-      ItemsBox
+      Spikes ✓,
+      ItemsBox,
+      Platforms
 ).
 - Les stages principaux n'ont pas encore été réinstauré (
       Station Test Zone,
-      Collision Space Zone
+      Collision Palace Zone
 ).
 
 # Dans le future

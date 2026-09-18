@@ -271,6 +271,12 @@
                  "id":344,
                  "name":"red_spring_up",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"enable_collision",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"Spring",
                  "visible":true,
@@ -368,6 +374,12 @@
                  "id":352,
                  "name":"red_spring_upleft",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"enable_collision",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"Spring",
                  "visible":true,
@@ -454,7 +466,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":360,
+ "nextobjectid":361,
  "orientation":"orthogonal",
  "properties":[
         {

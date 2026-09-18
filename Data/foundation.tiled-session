@@ -224,7 +224,7 @@
         "Maps/Global/16x16.json"
     ],
     "project": "foundation.tiled-project",
-    "property.type": "object",
+    "property.type": "bool",
     "recentFiles": [
         "Maps/Global/16x16.json",
         "Maps/STZ1/Tiles.tsx",

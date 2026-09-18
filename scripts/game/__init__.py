@@ -95,10 +95,10 @@ def run():
 
         render_water()
 
-        surfarray_blit(palette_array, vec2(32*0, 2), pal_id=P_PLAYERS)
-        surfarray_blit(palette_array, vec2(32*1, 2), pal_id=P_OBJECTS)
-        surfarray_blit(palette_array, vec2(32*2, 2), pal_id=P_TILES)
-        surfarray_blit(palette_array, vec2(32*3, 2), pal_id=P_BACKGROUND)
+        surfarray_blit(palette_array, vec2((32*0)+0, 2), pal_id=P_PLAYERS)
+        surfarray_blit(palette_array, vec2((32*1)+1, 2), pal_id=P_OBJECTS)
+        surfarray_blit(palette_array, vec2((32*2)+2, 2), pal_id=P_TILES)
+        surfarray_blit(palette_array, vec2((32*3)+3, 2), pal_id=P_BACKGROUND)
         
         debug_mouse()
     kernel.destroy()

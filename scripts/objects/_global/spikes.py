@@ -7,7 +7,6 @@ class Spikes(TiledObjectEntity):
         "spikes_bottom":    dict(frame=0, flipH=True, flipV=False),
         "spikes_left":      dict(frame=1, flipH=False, flipV=True),
         "spikes_right":     dict(frame=1, flipH=False, flipV=False),
-
     }
     
     def update(self):

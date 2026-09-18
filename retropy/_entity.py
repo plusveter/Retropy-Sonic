@@ -125,7 +125,6 @@ class ObjectEntity:
 		other_rect.top          += 1
 		other_rect.bottom       -= 1
 
-		this_rect.width += 1
 
 		if other_rect.centerx <= this_rect.centerx:
 			if this_rect.colliderect(other_rect):
@@ -142,7 +141,6 @@ class ObjectEntity:
 		self_hitbox.right      -= 1
 		self_hitbox.bottom     += 1
 
-		this_rect.width 	   -= 1
 
 		#--------------------------------------------
 		# Vertical collision

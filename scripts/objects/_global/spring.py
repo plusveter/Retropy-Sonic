@@ -36,17 +36,19 @@ class Spring(TiledObjectEntity):
     offset_array = numpy.array(
              [20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0],
              dtype=numpy.int8
-        )
+    )
 
     def __init__(self, objectid = -1):
         super().__init__(objectid)
+
         self.bounce_tracker = AnimationTracker(loop=2)
+        self.enable_collision = int(self.tiled_properties.get("enable_collision", True))
 
     def update(self):
         super().update()
         graphic.palette = P_OBJECTS
 
-        self.hitbox = rect(self.tiled_offset.x, self.tiled_offset.y, self.tiled_width, self.tiled_height)
+        self.hitbox = rect(self.tiled_offset.x, self.tiled_offset.y+1, self.tiled_width, self.tiled_height)
         namedata = self.namedatas.get(self.tiled_name, -1)
 
         if namedata != -1:
@@ -74,7 +76,7 @@ class Spring(TiledObjectEntity):
             if player.platform_standing == self.entity_id:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
-            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, 1)
+            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision)
             if side: 
 
                 if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
@@ -118,7 +120,7 @@ class Spring(TiledObjectEntity):
             if player.platform_standing == self.entity_id:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
-            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, 1)
+            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision)
 
             if side: 
                 
@@ -172,7 +174,7 @@ class Spring(TiledObjectEntity):
 
         for player in check_object_by_classname("Player"):
 
-            i = int(max(4 - abs(player.speed.x), 0))
+            i = int(max(3 - abs(player.speed.x), 0))
             hitbox2 = rect(self.hitbox.left + i, self.hitbox.top + i, self.hitbox.width + -(i *2), self.hitbox.height + -(i *2))
 
             if direction.x == -1:
@@ -186,7 +188,8 @@ class Spring(TiledObjectEntity):
             if player.platform_standing == self.entity_id:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
-            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, 1) # Had a param that check collsion
+            side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision) # Had a param that check collsion
+
             if side:
 
                 if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):

@@ -440,8 +440,9 @@ class TiledMap:
                                     f"Please use other type of file type such as '.TJ' or '.JSON', instead of '.{(template_extension.upper())}'. "
                                 )
                             if template_data["object"].get("gid"):
-                                tileset_path = resolve_relative_path(resoled_path, template_data["tileset"]["source"])
-                                template_data["object"]["gid"] += self.tilesets[tileset_path].firstgid -1
+                                if template_data.get("tileset"):
+                                    tileset_path = resolve_relative_path(resoled_path, template_data["tileset"]["source"])
+                                    template_data["object"]["gid"] += self.tilesets[tileset_path].firstgid -1
 
                             self.templates[resoled_path] = template_data
                     self.add_object(object_data)

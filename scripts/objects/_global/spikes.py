@@ -9,6 +9,7 @@ class Spikes(TiledObjectEntity):
         "spikes_right":     dict(frame=1, flipH=False, flipV=False),
     }
     
+    # This is one of if not the easiest object to work on
     def update(self):
         super().update()
         graphic.palette = P_OBJECTS

@@ -79,21 +79,21 @@ def Collision_Stop(self:PlayerBase):
     self.sensor_UPDATE()
     if self.MODE == 0:
         if self.sensor_STOP_right.collide(self.chunk_mask):
-            varx = -(self.sensor_STOP_right.repel_rightside(self.chunk_mask)-1)
+            varx = -(self.sensor_STOP_right.repel_rightside(self.chunk_mask))
             self.position[0] += varx
             if self.speed[0] < 0: 
                 self.speed[0] = 0
                 self.position[0] += -1
-                self.on_object_positionx += -1
-            self.on_object_positionx += varx
+                self.platform_position += -1
+            self.platform_position += varx
         if self.sensor_STOP_left.collide(self.chunk_mask):
-            varx = -(self.sensor_STOP_left.repel_leftside(self.chunk_mask)+1)
+            varx = -(self.sensor_STOP_left.repel_leftside(self.chunk_mask))
             self.position[0] += varx
             if self.speed[0] > 0: 
                 self.speed[0] = 0
                 self.position[0] += 1
-                self.on_object_positionx += 1
-            else:self.on_object_positionx += varx
+                self.platform_position += 1
+            else:self.platform_position += varx
 
     if self.MODE == 1:
         if self.sensor_STOP_right.collide(self.chunk_mask):

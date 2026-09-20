@@ -12,7 +12,7 @@ def run():
     kernel.window.flags = pygame.RESIZABLE
     kernel.mixerscale = 10
     kernel.soundfx.volume = 5
-    kernel.music.volume = 5
+    kernel.music.volume = 0
     kernel.opengl.setup( OPENGL_WINDOW_BUFFERARRAY, datapack.load_text(SHADERFOLDER+"default.vert"), datapack.load_text(SHADERFOLDER+"default.frag"))
     kernel.setup()
 

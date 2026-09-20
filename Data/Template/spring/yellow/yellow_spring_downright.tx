@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object name="yellow_spring_downright" type="Spring" width="32" height="32">
+  <properties>
+   <property name="enable_collision" type="bool" value="true"/>
+  </properties>
+ </object>
+</template>

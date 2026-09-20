@@ -73,14 +73,14 @@ class Spring(TiledObjectEntity):
 
         for player in check_object_by_classname("Player"): 
 
-            if player.platform_standing == self.entity_id:
+            if player.platform_standing == self.entity_id and self.enable_collision:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
             side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision)
             if side: 
-
-                if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
-                    player.Stand_on_Platform(player.hitbox, self, self.hitbox)
+                if  self.enable_collision:
+                    if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
+                        player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
                 if side == C_TOP and flip == 0: 
                         player.ground_angle = 0
@@ -117,25 +117,27 @@ class Spring(TiledObjectEntity):
 
         for player in check_object_by_classname("Player"): 
 
-            if player.platform_standing == self.entity_id:
+            if player.platform_standing == self.entity_id and self.enable_collision:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
             side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision)
 
             if side: 
-                
-                if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
-                    player.Stand_on_Platform(player.hitbox, self, self.hitbox)
+                if  self.enable_collision:
+                    if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
+                        player.Stand_on_Platform(player.hitbox, self, self.hitbox)
                     
                 if side == C_LEFT and flip == 0: 
-                        player.speed.x  = -strenght
-                        player.ground_speed = -strenght
+                        if player.ground: player.ground_speed = -strenght
+                        else: player.speed.x  = -strenght
+                        
                         play_sound(general.SFX_Spring)
                         self.bounce_tracker.loop = 0
 
                 elif side ==  C_RIGHT and flip == 1:
-                        player.speed.x  = strenght
-                        player.ground_speed = strenght
+                        if player.ground: player.ground_speed = strenght
+                        else: player.speed.x  = strenght
+
                         play_sound(general.SFX_Spring)
                         self.bounce_tracker.loop = 0
 
@@ -149,9 +151,7 @@ class Spring(TiledObjectEntity):
         self.draw(vec2(self.hitbox.center))
 
     def state_diagonal(self, strenght:float, rotate:bool, color:str):
-
-
-        speed_cap = False
+        speed_cap = self.tiled_properties.get("enable_speed_cap", True)
 
         offset_array = self.offset_array[::-1]
         direction = vec2(1, -1)
@@ -185,15 +185,15 @@ class Spring(TiledObjectEntity):
             offset_index = max(min(player.x - self.x + collision_offset, lenght-1), 0)
             self.hitbox.top += offset_array[int(offset_index)] -1
 
-            if player.platform_standing == self.entity_id:
+            if player.platform_standing == self.entity_id and self.enable_collision:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
             side = player.Check_Object_Collision_Box(player.hitbox, self, self.hitbox, self.enable_collision) # Had a param that check collsion
 
             if side:
-
-                if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
-                    player.Stand_on_Platform(player.hitbox, self, self.hitbox)
+                if  self.enable_collision:
+                    if player.Check_Object_Collision_Platform(player.hitbox, self, self.hitbox, 0):
+                        player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
             # check if speed_cap is disable
             if not speed_cap:

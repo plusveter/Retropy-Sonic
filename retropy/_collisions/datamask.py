@@ -37,7 +37,7 @@ class DataMask:
 	arraydata: np.ndarray
 	loopmax: int
 
-	def __init__(self, mask, arraydata, loopmax=4):
+	def __init__(self, mask, arraydata, loopmax=8):
 		self.mask = mask
 		self.arraydata = arraydata
 		self.loopmax = loopmax

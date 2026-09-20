@@ -15,7 +15,6 @@ def load_xml_template(path_template_file):
 		# extract
 		tileset = root.find("tileset")
 		object = root.find("object")
-
 		template = {
 			"object": {
 				"gid": int(object.get("gid", 0)),
@@ -29,12 +28,15 @@ def load_xml_template(path_template_file):
 				"width": float(object.get("width", 0)),
 				"properties": []
 			},
-			"tileset": {
-				"firstgid": int(tileset.get("firstgid", 0)),
-				"source": tileset.get("source", "")
-			},
+
 			"type": root.tag
 		}
+
+		if not (tileset is None): 
+			template["tileset"] = {
+				"firstgid": int(tileset.get("firstgid", 0)),
+				"source": tileset.get("source", "")
+			}
 
 		properties = object.find("properties")
 		if properties is not None:

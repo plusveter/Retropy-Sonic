@@ -1,0 +1,30 @@
+{
+    "type": "simple",
+    "palette": {"imgfile": "layer0.gif"},
+    "offset" :  {"position": [0, -100], "speed": [0, 0.1]},
+    "scroll":   {"position": [0, 0], "speed": [0.25, 1]},
+
+    "layers": [
+        {
+            "image":"./layer0.gif", "offset" :  {"position": [0, 0], "speed": [0, 0]}, "orientation":"V", 
+            "axis_scrolldata": {
+                "0"     : { 
+                    "speed"         : {"value": 0},
+                    "cumulation"  : {"value": 0.1}
+                },
+                "384"   : {
+                    "speed"         : {"value": 0.1}
+                },
+                "446"   : {
+                    "speed"         : {"value": 0.2}
+                },
+                "515"   : {
+                    "speed"         : {"value": 0.3}
+                },
+                "579"   : {
+                    "speed"         :  {"value": 0.5}
+                }
+            }
+        }
+    ]
+}

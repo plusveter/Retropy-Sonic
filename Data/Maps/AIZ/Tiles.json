@@ -1,0 +1,15 @@
+{ "columns":25,
+ "image":"Chunks.gif",
+ "imageheight":200,
+ "imagewidth":400,
+ "margin":0,
+ "name":"Tiles",
+ "spacing":0,
+ "tilecount":300,
+ "tiledversion":"1.9.2",
+ "tileheight":16,
+ "tilewidth":16,
+ "transparentcolor":"#ff00ff",
+ "type":"tileset",
+ "version":"1.9"
+}

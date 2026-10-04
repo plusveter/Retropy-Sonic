@@ -3,6 +3,7 @@
  <tileset firstgid="1" source="../../Sprites/Editor/Editor.tsx"/>
  <object name="simple" type="SwapCollisionLayer" gid="16" width="83" height="107">
   <properties>
+   <property name="check_ground" type="bool" value="false"/>
    <property name="layer_class" propertytype="collision_layer_classname" value="CollisionA"/>
   </properties>
  </object>

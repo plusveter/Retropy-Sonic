@@ -2,33 +2,53 @@
     "activeFile": "Maps/STZ1/map.tmj",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
-        "Maps/TZ1",
+        "Maps/C1",
+        "Maps/STZ1/Rules",
+        "Sprites",
         "Sprites/Players",
         "Maps",
-        "Maps/STZ1",
-        ".",
-        "Maps/C1/Z1",
-        "Maps/TZ1/Sprites",
-        "Maps/C1/TZ1",
-        "Sprites/Editor",
         "Maps/Global",
-        "Maps/TTZ1",
+        "Sprites/Editor",
+        "Maps/C1/TZ1",
         "Maps/Globals",
-        "Maps/Z1",
-        "Maps/Chap1",
-        "Maps/STZ1/Rules",
-        "Maps/C1",
+        "Template",
+        "Maps/TTZ1",
+        "Maps/TZ1/Sprites",
+        "Template/spring/red",
         "Maps/Chap1/TZ1",
-        "Sprites",
+        ".",
+        "Template/spring",
         "Maps/C1Z1",
-        "Template"
+        "Maps/Chap1",
+        "Maps/TZ1",
+        "Maps/C1/Z1",
+        "Maps/Z1",
+        "Maps/STZ1"
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         ":/automap-tiles.tsx": {
             "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/Global/16x16.json": {
+            "scaleInDock": 1
+        },
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/Tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj": {
+            "scale": 0.20947265625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3585.1934731934734,
+                "y": 1792.5967365967367
+            }
+        },
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Sprites/Editor/Editor.tsx": {
             "scaleInDock": 1
         },
         "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition/Sprites/Editor/Editor.tsx": {
@@ -80,6 +100,64 @@
             "scaleInDock": 1
         },
         "Global/16x16.json": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "Maps/AIZ/Chunks.json": {
+            "scale": 0.5023681640625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1023.1540069009089,
+                "y": 127.39660786314818
+            }
+        },
+        "Maps/AIZ/Chunks.json#Tiles": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "Maps/AIZ/Stage.json": {
+            "expandedGroupLayers": [
+                7,
+                3
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": -510.66666666666663,
+                "y": -34
+            }
+        },
+        "Maps/AIZ/Stage.json#Tiles": {
+            "scaleInDock": 1
+        },
+        "Maps/AIZ/Tiles.json": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/AIZ/map.json": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": -928,
+                "y": -96.25
+            }
+        },
+        "Maps/AIZ/map.json#Tiles": {
+            "scaleInDock": 1
+        },
+        "Maps/AIZ/map.tmj": {
+            "expandedObjectLayers": [
+                10
+            ],
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -814,
+                "y": -83.25
+            }
+        },
+        "Maps/AIZ/map.tmj#Tiles": {
             "dynamicWrapping": false,
             "scaleInDock": 1
         },
@@ -159,6 +237,13 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Maps/Global/OverrunPocket0/Collision.json": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "Maps/Global/OverrunPocket0/TileCollisionS3.json": {
+            "scaleInDock": 1
+        },
         "Maps/Globals/16x16.json": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
@@ -176,19 +261,19 @@
             "expandedGroupLayers": [
                 9,
                 8,
-                4,
-                5
+                5,
+                4
             ],
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 409.5,
-                "y": 174.25
+                "x": 1408.25,
+                "y": 512.25
             }
         },
         "Maps/STZ1/Tiles.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 2,
+            "scaleInDock": 5.5,
             "scaleInEditor": 1
         },
         "Maps/STZ1/map.tmj": {
@@ -196,11 +281,11 @@
                 3,
                 5
             ],
-            "scale": 1.5,
+            "scale": 0.125,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 5422.666666666666,
-                "y": -85.66666666666669
+                "x": 6444,
+                "y": 476
             }
         },
         "Maps/Sprites/Editor/Editor.tsx": {
@@ -287,38 +372,43 @@
         "Maps/Z1/tiles.tsx": {
             "scaleInDock": 1
         },
+        "Scriptes/Collision.json": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
         "Sprites/Editor/Editor.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 1,
             "scaleInEditor": 1
         }
     },
-    "last.externalTilesetPath": "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition/Data/Maps/Globals",
+    "last.externalTilesetPath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Maps/Global/OverrunPocket0",
     "last.imagePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Maps/STZ1",
-    "last.objectTemplatePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Template/spring/red",
+    "last.objectTemplatePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Template/platform",
     "map.fixedSize": false,
     "map.lastUsedFormat": "json",
     "map.layerDataFormat": "4",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Maps/STZ1/map.tmj"
+        "Maps/STZ1/map.tmj",
+        "Maps/STZ1/Rules/Chunks.tmj"
     ],
     "project": "foundation.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Maps/STZ1/Rules/Automapping.tmj",
-        "Maps/STZ1/map.tmj",
-        "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Rules/Base0.tmj",
         "Maps/STZ1/Rules/Chunks.tmj",
+        "Maps/STZ1/map.tmj",
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
+        "Maps/AIZ/map.json",
+        "Maps/AIZ/Tiles.json",
+        "Maps/AIZ/Stage.json",
+        "Maps/AIZ/Chunks.json",
+        "Maps/STZ1/Rules/Automapping.tmj",
+        "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Rules/Base0.tmj",
         "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Rules/Automapping.tmj",
         "Maps/Global/ChunkID.tsx",
-        "Maps/Global/16x16.json",
-        "Maps/STZ1/Tiles.tsx",
-        "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Stage.json",
-        "Maps/C1Z1/tiles.tsx",
-        "Maps/C1Z1/map.tmj",
-        "Sprites/Editor/Editor.tsx"
+        "Maps/Global/16x16.json"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

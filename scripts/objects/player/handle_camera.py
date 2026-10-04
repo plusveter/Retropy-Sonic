@@ -5,6 +5,10 @@ from .base import PlayerBase
 
 def player_handle_camera(self:PlayerBase):
     if camera.mode == -1: return None
+
+    if camera.tiled_objectid  == -1: camera.tiled_objectid = self.tiled_id 
+    if camera.tiled_objectid  != self.tiled_id: return
+    
     centered_windows = [(camera.view_size.x/2)+camera.x, (camera.view_size.y/2)-camera.look_shift+camera.y]
 
     freespace_size = [8//1.25 , 24//1.25]

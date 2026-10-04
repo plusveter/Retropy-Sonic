@@ -1,0 +1,30 @@
+{
+  "spritesSHEETS": "Background V2.gif",
+  "AlphaColor": 0,
+  "version": 1.0,
+  "coord": [0, -320],
+  "SPEED":[0.1, 0.08],
+  "ColorBackground": 11,
+  "layer": [
+
+    {"rect": [0, 512, 704, 384], "speed": 0.01, "type": 1, "coord":  [0, 0], "direction": [0.5, 0], "type2": 1},
+    {"rect": [0, 256, 448, 256], "speed": 0.001, "type": 1, "coord":  [0, 96], "direction": [0, 0], "type2": 1},
+
+
+    {"rect": [0, 896, 704, 32], "speed": 0.06, "type":1, "coord":  [0, 256], "direction": [-1, 0], "type2": 1},
+    {"rect": [0, 928, 704, 32], "speed": 0.08, "type":1, "coord":  [0, 288], "direction": [-1, 0], "type2": 1},
+    {"rect": [0, 960, 704, 32], "speed": 0.1, "type":1, "coord":  [0, 320], "direction": [-1, 0], "type2": 1},
+    {"rect": [0, 992, 704, 32], "speed": 0.12, "type":1, "coord":  [0, 352], "direction": [-1, 0], "type2": 1},
+
+    
+
+
+
+    {"rect": [0, 0, 704, 64], "speed": 0.2, "type": 1, "coord":  [0, 384], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 64, 704, 64], "speed": 0.3, "type": 1, "coord":  [0, 448], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 128, 704, 64], "speed": 0.5, "type": 1, "coord":  [0, 512], "direction": [0,0], "type2": 1},
+    {"rect": [0, 192, 704, 64], "speed": 1, "type": 1, "coord":  [0, 576], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 1024, 704, 64], "speed": 10, "type": 1, "coord":  [0, 640], "direction": [0, 0], "type2": 1}
+
+  ]
+}

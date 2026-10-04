@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <object name="basic_platform" type="Platform" width="64" height="32">
+  <properties>
+   <property name="Animation" value="Platforms"/>
+   <property name="FlipSync" type="bool" value="false"/>
+   <property name="MoveX" type="int" value="0"/>
+   <property name="MoveY" type="int" value="0"/>
+  </properties>
+ </object>
+</template>

@@ -54,7 +54,11 @@ class Spring(TiledObjectEntity):
         if namedata != -1:
             state = namedata["state"]
 
-            strenght = self.color_data[namedata["color"]]["strenght"]
+            strenght = self.tiled_properties.get("strenght", -1)
+            if strenght  <= 0:
+                strenght = self.color_data[namedata["color"]]["strenght"]
+            
+
             color = self.color_data[namedata["color"]]["name"]
             flip = namedata["flip"]
 

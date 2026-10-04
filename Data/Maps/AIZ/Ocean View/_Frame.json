@@ -1,0 +1,15 @@
+{
+  "spritesSHEETS": "Background.gif",
+  "AlphaColor": [255, 0, 255],
+  "version": 1.0,
+  "coord": [0, -160],
+  "layer": [
+    {"rect": [0, 0, 636, 64], "speed": 0, "type": 1, "coord":  [0, 0], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 64, 636, 64], "speed": 0.1, "type": 1, "coord":  [0, 64], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 128, 636, 64], "speed": 0.2, "type": 1, "coord":  [0, 128], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 192, 636, 64], "speed": 0.3, "type": 1, "coord":  [0, 192], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 256, 636, 64], "speed": 0.5, "type": 1, "coord":  [0, 256], "direction": [0, 0], "type2": 1},
+    {"rect": [0, 320, 636, 64], "speed": 1, "type": 1, "coord":  [0, 320], "direction": [0, 0], "type2": 1}
+
+  ]
+}

@@ -3,6 +3,7 @@
  <object name="red_spring_right" type="Spring" width="32" height="32">
   <properties>
    <property name="enable_collision" type="bool" value="true"/>
+   <property name="strenght" type="float" value="16"/>
   </properties>
  </object>
 </template>

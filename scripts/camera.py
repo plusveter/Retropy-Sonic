@@ -7,6 +7,7 @@ class Camera:
 		self.x = 0
 		self.y = 0
 		self.mode = 0
+		self.tiled_objectid = -1
 		
 		self.look_timer = 0
 		self.look_shift = 0

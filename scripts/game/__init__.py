@@ -44,7 +44,7 @@ def run():
 
     # setup
     camera.view_size = kernel.size
-    general.load_map("STZ1")
+    general.load_map("AIZ")
     general.musics = load_musics_from_jsonfile("Data\Game\musics.json")
     tiledmap.load_visible_tilelayers_2Darray(26, 16)
     play_music(general.musics.get(tiledmap.data.properties.get("music_name", ""), -1))
@@ -67,9 +67,10 @@ def run():
         general.update()
         kernel.bg_color = tiledmap.data.backgroundcolor
 
-        game_control()
+        
         camera.pre_update()
         tiledmap.pool.updates()
+        game_control()
         tiledmap.set_view(camera.x, camera.y, kernel.size.x, kernel.size.y)
         background.camera_position = camera.position
         tiledmap.load_objects()
@@ -95,10 +96,11 @@ def run():
 
         render_water()
 
-        surfarray_blit(palette_array, vec2((32*0)+0, 2), pal_id=P_PLAYERS)
-        surfarray_blit(palette_array, vec2((32*1)+1, 2), pal_id=P_OBJECTS)
-        surfarray_blit(palette_array, vec2((32*2)+2, 2), pal_id=P_TILES)
-        surfarray_blit(palette_array, vec2((32*3)+3, 2), pal_id=P_BACKGROUND)
+        if False:
+            surfarray_blit(palette_array, vec2((32*0)+0, 2), pal_id=P_PLAYERS)
+            surfarray_blit(palette_array, vec2((32*1)+1, 2), pal_id=P_OBJECTS)
+            surfarray_blit(palette_array, vec2((32*2)+2, 2), pal_id=P_TILES)
+            surfarray_blit(palette_array, vec2((32*3)+3, 2), pal_id=P_BACKGROUND)
         
         debug_mouse()
     kernel.destroy()
@@ -112,14 +114,20 @@ def game_control():
     if pygame.mouse.get_pressed()[2]: 
         i = (kernel.frames*(math.pi)*2)+(kernel.frames)
 
-        effect = objects.WaterEffect()
-        effect.layerid = 3
-        effect.animation = "Large Bubble"
-        effect.position = (
-            camera.position + 
-            camera.get_scale_position(vec2(pygame.mouse.get_pos())) + 
-            vec2(math.cos(i)*60, math.sin(i)*60)
-            )
+        
+
+        layer = check_layer_by_name("Debug")
+        if (layer == -1):
+            layer = tiledmap.new_layer()
+            layer.name = "Debug"
+            layer.type = LAYERTYPE_OBJECTGROUP
+            tiledmap.add_layer(layer)
+
+        player = objects.Player()
+        player.tiled_width = 10
+        player.tiled_height = 10
+        player.position = ( camera.position + camera.get_scale_position(vec2(pygame.mouse.get_pos())) )
+        player.spawn()
 
     kernel.framerate = 62
     if not kernel.window.focus:

@@ -4,6 +4,7 @@
  <object name="direction_vertical" type="SwapCollisionLayer" gid="14" width="155" height="148">
   <properties>
    <property name="blue" propertytype="collision_layer_classname" value="CollisionA"/>
+   <property name="check_ground" type="bool" value="false"/>
    <property name="red" propertytype="collision_layer_classname" value="CollisionB"/>
   </properties>
  </object>

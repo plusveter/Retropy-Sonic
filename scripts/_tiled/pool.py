@@ -40,29 +40,35 @@ class TiledObjectPool:
             if len(self.objects_type[objectclassname]) == 0: self.objects_type.pop(objectclassname)
 
     def updates(self):
-        # new
         self.prerenders_layers = {}
-
-        # update method
         self.updated_object = []
+
+        def priority_key(objectid):
+            obj = self.objects.get(objectid)
+            return (
+                getattr(obj, "update_priority", 100),
+                objectid
+            )
+
+        def sort_ids(object_ids):
+            return sorted(
+                object_ids,
+                key=priority_key
+            )
+
         def update_list(object_list):
+            for objectid in sort_ids(object_list):
+                if objectid in self.updated_object:
+                    continue
 
-            # update a rearranged list of object
-            for objectid in sorted(object_list): 
+                self.updated_object.append(objectid)
 
-                # Check if the object wasn't already called before
-                if not objectid in self.updated_object:
+                if self.objects_focus.get(objectid):
+                    focused_objects = self.objects_focus.pop(objectid)
+                    update_list(focused_objects)
 
-                    # make sure this update once & stop infinte loops (a security)
-                    self.updated_object.append(objectid)
-
-                    # update the list the object is currently focus on 
-                    if self.objects_focus.get(objectid): 
-                        update_list(self.objects_focus[objectid])
-                        self.objects_focus.pop(objectid) # remove the object index from the focus
-
-                    # update object
-                    self.objects[objectid].update()
+                obj = self.objects.get(objectid)
+                if obj: obj.update()
 
         update_list(self.objects.keys())
         

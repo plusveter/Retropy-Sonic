@@ -33,7 +33,7 @@ def bg_simple(data:dict[str, list[dict[str, dict]]]):
         modul_params        = {"value": 0, "incre": None}
 
         def get_params(data:dict[str, dict]):
-            return dict(value=data.get("value", 0), incre=data.get("increment", None))
+            return dict(value=data.get("value", 0), incre=data.get("incre", None))
 
         def update_params(params):
             if params["incre"] is not None:
@@ -48,7 +48,7 @@ def bg_simple(data:dict[str, list[dict[str, dict]]]):
                 if axis_data.get("speed"):      speed_params = get_params(axis_data["speed"])
                 if axis_data.get("cumulation"): cumul_params = get_params(axis_data["cumulation"])
                 if axis_data.get("modulo"): modul_params = get_params(axis_data["modulo"])
-
+            
             speed_params    = update_params(speed_params)
             cumul_params    = update_params(cumul_params)
             modul_params    = update_params(modul_params)

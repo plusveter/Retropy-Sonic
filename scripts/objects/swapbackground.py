@@ -6,11 +6,13 @@ class SwapBackground(TiledObjectEntity):
         super().update()
 
         select_bg = self.tiled_properties.get("select", -1)
-
-        if not select_bg in background.namelist: return 0
-        if not camera.has_collided_with_screen(self.rect): return 0
+        if not select_bg in background.namelist: 
+            print("Background not defined in the map")
+            return 0
+        if not camera.has_collided_with_screen(self.bound): return 0
         if not background.current is None:
             if background.current.id == select_bg : return 0
+        
         
         background.use(self.tiled_properties["select"])
 

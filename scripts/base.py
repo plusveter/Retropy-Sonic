@@ -40,6 +40,9 @@ class General:
         # Water
         self.water_height = 0
         self.water_visible = False
+
+        # Platform
+        self.platform_movement = 0
         
 
     def reload_map(self):
@@ -53,6 +56,7 @@ class General:
 
         if datapack.check_filepath(MAPSFOLDER + zone +"/map.tmj"):
             tiledmap.load(MAPSFOLDER + zone +"/map.tmj")
+
         else:
             raise FileNotFoundError(
                 f"""Your file [{MAPSFOLDER + zone +"/map.tmj"}] doesn't exist """
@@ -99,6 +103,9 @@ class General:
         camera.mode = CAM_NORMAL
 
     def update(self):
+        #platform
+        self.platform_movement = (self.platform_movement + 0.03) % (math.pi * 2)
+
         # rings
         general.ring_tracker.handle_animation_by_name(general.dynamic_sprites, "Normal Ring")
         if general.rings < 0: general.rings = 0

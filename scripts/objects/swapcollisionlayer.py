@@ -6,6 +6,8 @@ class SwapCollisionLayer(TiledObjectEntity):
         super().__init__(objectid)
 
         # need to ask about a feature with BJORN 
+        self.check_ground = self.tiled_properties.get("check_ground", False)
+
         layer = tiledmap.layers_classname.get(self.tiled_properties.get("layer_class", -1), -1)
         self.specific_layerid = layer.id if layer != -1 else -1
 
@@ -37,6 +39,8 @@ class SwapCollisionLayer(TiledObjectEntity):
             
             # skip this player if he had the same layerid value as the swapcollision
             if (player.ground_layer == self.specific_layerid) or (self.specific_layerid == -1): continue # this help skip in the loop 
+
+            if (self.check_ground and not player.ground): continue
 
             # look for collision between the two
             if self.Check_Object_Collision_Box(self.hitbox, player, player.hitbox, 0): player.ground_layer = self.specific_layerid

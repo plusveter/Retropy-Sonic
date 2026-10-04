@@ -37,8 +37,8 @@ class HUD(TiledObjectEntity): # Head Up Display
         self.rendering()
 
     def check_layer(self):
-        if tiledmap.layers.get(self.layerid): 
-            if tiledmap.layers[self.layerid].name == "HUD": 
+        if tiledmap.layers.get(self.tiled_layerid): 
+            if tiledmap.layers[self.tiled_layerid].name == "HUD": 
                 return # skip if these params are true
 
         layer = check_layer_by_name("HUD")
@@ -50,7 +50,7 @@ class HUD(TiledObjectEntity): # Head Up Display
             layer.type = LAYERTYPE_OBJECTGROUP
             tiledmap.add_layer(layer)
 
-        self.layerid = layer.id
+        self.tiled_layerid = layer.id
 
     def rendering(self):
         graphic.palette = P_OBJECTS

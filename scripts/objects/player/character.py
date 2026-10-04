@@ -14,8 +14,14 @@ class Character:
 		self.animation_tracker.handle_animation_by_name(self.sprites, self.anim)
 		self.animation_has_finished = self.animation_tracker.has_looped
 
-		if self.tails_appears:
-			self.tails_animation_tracker.handle_animation_by_name(self.sprites, self.tails_anim)
+		if self.player_id == CHAR_TAILS:
+			if self.tails_appears:
+				self.tails_animation_tracker.handle_animation_by_name(self.sprites, self.tails_anim)
+				prerender_name_sprite(self.sprites, self.tails_anim, self.tails_animation_tracker)
+				apply_flip_on_prerender(flipX=min(0, self.tails_facing))
+				apply_rotation_on_prerender(self.tails_visual_angle)
+				
+				self.draw(vec2(0))
 		
 		set_palette_at(2, kernel.palette.get_array(P_PLAYERS)[(0x10 + 3*self.player_id)], P_PLAYERS)
 		set_palette_at(3, kernel.palette.get_array(P_PLAYERS)[(0x11 + 3*self.player_id)], P_PLAYERS)

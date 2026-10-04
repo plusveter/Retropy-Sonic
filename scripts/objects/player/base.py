@@ -561,8 +561,8 @@ class PlayerBase(TiledObjectEntity):
 		# CENTER_POINT
 		# SENSOR
 
-		bottom = 20
-		top = -20
+		bottom = 19
+		top = -19
 		left = -8
 		right = 8
 		

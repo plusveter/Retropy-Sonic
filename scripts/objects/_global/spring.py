@@ -76,7 +76,7 @@ class Spring(TiledObjectEntity):
         if not flip: self.hitbox.top += 16
 
         for player in check_object_by_classname("Player"): 
-
+            tiledmap.pool.add_preceding_obj(player, self.tiled_id)
             if player.platform_standing == self.entity_id and self.enable_collision:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
@@ -120,7 +120,7 @@ class Spring(TiledObjectEntity):
         if not flip: self.hitbox.left += 16
 
         for player in check_object_by_classname("Player"): 
-
+            tiledmap.pool.add_preceding_obj(player, self.tiled_id)
             if player.platform_standing == self.entity_id and self.enable_collision:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
 
@@ -177,7 +177,7 @@ class Spring(TiledObjectEntity):
         potential_energy = direction * strenght * self.diagonal_yield #kinetic energy
 
         for player in check_object_by_classname("Player"):
-
+            tiledmap.pool.add_preceding_obj(player, self.tiled_id)
             i = int(max(3 - abs(player.speed.x), 0))
             hitbox2 = rect(self.hitbox.left + i, self.hitbox.top + i, self.hitbox.width + -(i *2), self.hitbox.height + -(i *2))
 

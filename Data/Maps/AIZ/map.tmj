@@ -39,6 +39,66 @@
          "y":0
         }, 
         {
+         "color":"#00fbff",
+         "draworder":"topdown",
+         "id":13,
+         "name":"Offscreen Spawner",
+         "objects":[
+                {
+                 "height":240,
+                 "id":260,
+                 "properties":[
+                        {
+                         "name":"keep_alive",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"spawn_once",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"spawned_objectid",
+                         "type":"object",
+                         "value":253
+                        }],
+                 "template":"..\/..\/Template\/dev\/offscreen_spawner.tx",
+                 "width":752,
+                 "x":4336,
+                 "y":-32
+                }, 
+                {
+                 "height":688,
+                 "id":261,
+                 "properties":[
+                        {
+                         "name":"keep_alive",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"spawn_once",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"spawned_objectid",
+                         "type":"object",
+                         "value":251
+                        }],
+                 "template":"..\/..\/Template\/dev\/offscreen_spawner.tx",
+                 "width":208,
+                 "x":4784,
+                 "y":-192
+                }],
+         "opacity":0.38,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "draworder":"topdown",
          "id":10,
          "name":"Swap Layer",
@@ -2682,7 +2742,7 @@
          "startx":-96,
          "starty":-32,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":672,
          "x":0,
          "y":0
@@ -3533,7 +3593,7 @@
          "startx":-16,
          "starty":-16,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":560,
          "x":0,
          "y":0
@@ -6444,19 +6504,100 @@
                  "y":80
                 }, 
                 {
-                 "height":32,
-                 "id":254,
+                 "height":128,
+                 "id":268,
+                 "name":"ground_break",
+                 "opacity":1,
                  "properties":[
                         {
-                         "name":"MoveX",
+                         "name":"Resist DropDash",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"Resist Jump",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"Resist Roll",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"Resist SpinDash",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"collision",
                          "type":"int",
-                         "value":-336
+                         "value":8
+                        }, 
+                        {
+                         "name":"destruction speed",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"surface",
+                         "type":"int",
+                         "value":5
                         }],
-                 "template":"..\/..\/Template\/platform\/basic.tx",
-                 "type":"Platform",
-                 "width":64,
-                 "x":-752,
-                 "y":-224
+                 "rotation":0,
+                 "type":"BreakableTileRegion",
+                 "visible":true,
+                 "width":432,
+                 "x":1344,
+                 "y":-16
+                }, 
+                {
+                 "height":112,
+                 "id":269,
+                 "name":"ground_break",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"Resist DropDash",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"Resist Jump",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"Resist Roll",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"Resist SpinDash",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"collision",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"destruction speed",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"surface",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"BreakableTileRegion",
+                 "visible":true,
+                 "width":448,
+                 "x":4352,
+                 "y":-256
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -7885,8 +8026,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":255,
+ "nextlayerid":14,
+ "nextobjectid":270,
  "orientation":"orthogonal",
  "properties":[
         {

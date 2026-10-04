@@ -42,7 +42,7 @@ class TiledObjectEntity(ObjectEntity ):
         self.tiled_name             = "unknowed"
 
         self.tiled_z                = 0
-        self.tiled_size             = vec2(0)
+        self.tiled_size             = vec2(1)
         self.tiled_offset           = vec2(0)
 
         self.tiled_gid              = -1
@@ -52,6 +52,7 @@ class TiledObjectEntity(ObjectEntity ):
         self.tiled_visible          = True
 
         self.tiled_properties       = {}
+        self.revoke_offscreenlimit  = False
 
         if objectid < 0: 
             self.tiled_id = tiledmap.data.nextobjectid
@@ -88,7 +89,7 @@ class TiledObjectEntity(ObjectEntity ):
                     self.tiled_width, 
                     self.tiled_width
             )
-
+    
     # [Function]
     def load(self, data:dict=None) -> int:
         if data is None: 
@@ -138,11 +139,14 @@ class TiledObjectEntity(ObjectEntity ):
 
     def update(self):
         # check it the object is beyond the offscreen limit
-        offsetview:vec2 = tiledmap.offeset_views[self.tiled_layerid]
-        position = self.position - offsetview + self.tiled_offset
+        if (not self.revoke_offscreenlimit):
+            offsetview:vec2 = tiledmap.offeset_views[self.tiled_layerid]
+            position = self.position - offsetview + self.tiled_offset
 
-        boundrect =  pygame.Rect(position.x , position.y , self.tiled_width, self.tiled_height)
-        if not tiledmap.offscreen_rect.colliderect(boundrect): self.kill()
+            boundrect =  pygame.Rect(position.x , position.y , self.tiled_width, self.tiled_height)
+            if not tiledmap.offscreen_rect.colliderect(boundrect): self.kill()
+        
+        self.revoke_offscreenlimit = False
 
         # music channel
         kernel.soundfx.select_channel(DEFAULT_SOUNDFX_CHANNEL)

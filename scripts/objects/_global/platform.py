@@ -21,7 +21,6 @@ class Platform(TiledObjectEntity):
 
         def update(self):
                 super().update()
-                print(kernel.frames, self.__class__.__name__)
                 graphic.palette = P_OBJECTS
 
                 properties = self.tiled_properties

@@ -20,8 +20,11 @@ class General:
         self.extra_live_point = 0
 
         # SoundFX
-        self.SFX_Spring = load_soundfx(SOUNDSFOLDER +"Global/Spring.wav")
-        self.SFX_Ring = load_soundfx(SOUNDSFOLDER +"Global/Ring.wav")
+        self.SFX_Spring         = load_soundfx(SOUNDSFOLDER +"Global/Spring.wav")
+        self.SFX_Ring           = load_soundfx(SOUNDSFOLDER +"Global/Ring.wav")
+
+        self.SFX_LedgeBreak     = load_soundfx(SOUNDSFOLDER +"Stage/LedgeBreak.wav")
+        self.SFX_LedgeBreak3    = load_soundfx(SOUNDSFOLDER +"Stage/LedgeBreak3.wav")
 
         # Animations
         self.hud_sprites = load_RSDKv5Animations(SPRITESFOLDER+"Global/HUD.bin")

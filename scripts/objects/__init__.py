@@ -22,4 +22,6 @@ tiledmap.add_objectclass(SwapCollisionLayer)
 tiledmap.add_objectclass(SetWaterHeight)
 
 from ._global import *
+from ._dev import *
+
 

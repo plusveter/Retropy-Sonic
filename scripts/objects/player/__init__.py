@@ -109,7 +109,6 @@ class Player(PlayerBase):
 		self.player_list[self.player_id].rendering(self)
 		player_handle_camera(self)
 
-		print(kernel.frames, self.__class__.__name__)
 
 		debug = 0
 		tile_angles = 0

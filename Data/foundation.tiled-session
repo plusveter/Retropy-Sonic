@@ -2,28 +2,28 @@
     "activeFile": "Maps/STZ1/map.tmj",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
-        "Maps/C1",
-        "Maps/STZ1/Rules",
-        "Sprites",
-        "Sprites/Players",
-        "Maps",
-        "Maps/Global",
-        "Sprites/Editor",
-        "Maps/C1/TZ1",
-        "Maps/Globals",
         "Template",
-        "Maps/TTZ1",
-        "Maps/TZ1/Sprites",
-        "Template/spring/red",
-        "Maps/Chap1/TZ1",
-        ".",
-        "Template/spring",
-        "Maps/C1Z1",
+        "Sprites/Editor",
         "Maps/Chap1",
-        "Maps/TZ1",
+        "Template/spring",
+        "Maps/STZ1/Rules",
+        "Template/spring/red",
+        "Maps",
+        "Maps/C1Z1",
+        "Sprites/Players",
+        "Maps/C1/TZ1",
+        "Maps/TZ1/Sprites",
+        "Maps/C1",
+        "Maps/TTZ1",
         "Maps/C1/Z1",
+        "Sprites",
+        "Maps/Globals",
+        "Maps/STZ1",
+        ".",
+        "Maps/Global",
         "Maps/Z1",
-        "Maps/STZ1"
+        "Maps/TZ1",
+        "Maps/Chap1/TZ1"
     ],
     "fileStates": {
         "": {
@@ -150,11 +150,11 @@
             "expandedObjectLayers": [
                 10
             ],
-            "scale": 2,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": -814,
-                "y": -83.25
+                "x": -871.9999999999999,
+                "y": -133.33333333333331
             }
         },
         "Maps/AIZ/map.tmj#Tiles": {
@@ -267,7 +267,7 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 1408.25,
+                "x": 1385,
                 "y": 512.25
             }
         },
@@ -278,14 +278,14 @@
         },
         "Maps/STZ1/map.tmj": {
             "expandedObjectLayers": [
-                3,
-                5
+                5,
+                3
             ],
             "scale": 0.125,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 6444,
-                "y": 476
+                "x": 9080,
+                "y": 516
             }
         },
         "Maps/Sprites/Editor/Editor.tsx": {
@@ -384,7 +384,7 @@
     },
     "last.externalTilesetPath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Maps/Global/OverrunPocket0",
     "last.imagePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Maps/STZ1",
-    "last.objectTemplatePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Template/platform",
+    "last.objectTemplatePath": "C:/Users/UTILISATEUR/Documents/PythonProject/Retropy-Sonic/Data/Template/dev",
     "map.fixedSize": false,
     "map.lastUsedFormat": "json",
     "map.layerDataFormat": "4",
@@ -399,6 +399,7 @@
     "recentFiles": [
         "Maps/STZ1/Rules/Chunks.tmj",
         "Maps/STZ1/map.tmj",
+        "Maps/AIZ/map.tmj",
         "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/AIZ/map.json",
         "Maps/AIZ/Tiles.json",
@@ -407,8 +408,7 @@
         "Maps/STZ1/Rules/Automapping.tmj",
         "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Rules/Base0.tmj",
         "C:/Users/UTILISATEUR/Documents/PythonProject/Retropi-SonictheHedgehog/Data/Stages/TZ/Rules/Automapping.tmj",
-        "Maps/Global/ChunkID.tsx",
-        "Maps/Global/16x16.json"
+        "Maps/Global/ChunkID.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

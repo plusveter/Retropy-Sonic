@@ -129,7 +129,7 @@ def game_control():
         player.position = ( camera.position + camera.get_scale_position(vec2(pygame.mouse.get_pos())) )
         player.spawn()
 
-    kernel.framerate = 62
+    kernel.framerate = 60
     if not kernel.window.focus:
         kernel.framerate = 20
         old_pos = camera.position.copy()

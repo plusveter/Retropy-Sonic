@@ -19,6 +19,7 @@ class Spikes(TiledObjectEntity):
         
         color = 1
         for player in check_object_by_classname("Player"):
+            tiledmap.pool.add_preceding_obj(player, self.tiled_id)
             if player.platform_standing == self.entity_id:
                 player.Stand_on_Platform(player.hitbox, self, self.hitbox)
                 color = 16

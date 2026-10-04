@@ -2,6 +2,9 @@ from scripts.base import *
 from .base import PlayerBase
 from .macros import *
 
+# load Particles
+from scripts.objects._global.particle import Particle
+
 
 def player_state_peelout(self:PlayerBase):
 	# ref : https://github.com/DarkD04/Harmony-Framework/blob/app/scripts/player_state_peelout/player_state_peelout.gml
@@ -285,17 +288,21 @@ def player_state_spindash(self:PlayerBase):
 		self.spindashpitch = 0
 		
 		# Update the state
+
+
 		self.state = ST_SPINDASH
-		"""OBJ:ObjectsManager = self.parent.object_manager
-		self.spindash__part_object = OBJ.place(
-			"Particle", 
-			position= vec2(self.position) + vec2(20*-self.facing, 13), 
-			type="Spindash Dust",
-			layer=LAYER_FOREGROUND
-			)
-		self.spindash__part_object.can_die = 0
-		self.spindash__part_object.flip = self.facing
-		"""
+
+		particle = Particle()
+
+		particle.position = vec2(self.position) + vec2(20*-self.facing, 13)
+		particle.specification = 0
+		particle.animation_name = "Spindash Dust"
+		particle.tiled_layerid = self.tiled_layerid
+		particle.flipX = min(0, self.facing)
+		particle.can_die = False
+
+		self.spindash__part_object = particle
+		
 		
 		
 
@@ -323,7 +330,7 @@ def player_state_spindash(self:PlayerBase):
 	# Rev up!
 	if self.press_action():
 		# Play spindash sound
-		#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> self.spindash__part_object.animation_tracker.reset()
+		self.spindash__part_object.animation_tracker = AnimationTracker()
 		play_sound(self.SFX_SpinCharge)
 
 		# Reset the spindash frame
@@ -338,7 +345,7 @@ def player_state_spindash(self:PlayerBase):
 
 	# Release the spindash
 	if not self.input_down:
-		#>>>>>>>>>>>>>>>>>>>>>>>>>> self.spindash__part_object.stopped()
+		self.spindash__part_object.kill()
 		# Stop the spindash sound
 		self.SFX_SpinCharge.stop()
 

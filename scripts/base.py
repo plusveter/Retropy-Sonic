@@ -26,6 +26,9 @@ class General:
         self.SFX_LedgeBreak     = load_soundfx(SOUNDSFOLDER +"Stage/LedgeBreak.wav")
         self.SFX_LedgeBreak3    = load_soundfx(SOUNDSFOLDER +"Stage/LedgeBreak3.wav")
 
+        self.SFX_Destroy        = load_soundfx(SOUNDSFOLDER +"Global/Destroy.wav")
+        self.SFX_1Up            = load_soundfx(SOUNDSFOLDER +"Global/1Up.wav")
+
         # Animations
         self.hud_sprites = load_RSDKv5Animations(SPRITESFOLDER+"Global/HUD.bin")
         self.water_sprites = load_RSDKv5Animations(SPRITESFOLDER+"Global/Water.bin")

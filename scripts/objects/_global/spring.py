@@ -177,7 +177,7 @@ class Spring(TiledObjectEntity):
         potential_energy = direction * strenght * self.diagonal_yield #kinetic energy
 
         for player in check_object_by_classname("Player"):
-            tiledmap.pool.add_preceding_obj(player, self.tiled_id)
+            tiledmap.pool.add_preceding_obj(player, self.tiled_id) # permet à l'objet de se mettre à jour avant le joueur
             i = int(max(3 - abs(player.speed.x), 0))
             hitbox2 = rect(self.hitbox.left + i, self.hitbox.top + i, self.hitbox.width + -(i *2), self.hitbox.height + -(i *2))
 

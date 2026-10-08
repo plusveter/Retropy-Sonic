@@ -52,8 +52,8 @@ def player_handle_camera(self:PlayerBase):
     camera.y = int(camera_y)
 
     # get_player_coord
-    camera.target_x = self.position[0]
-    camera.target_y = self.position[1]
+    camera.target_x = self.position.x
+    camera.target_y = self.position.y
 
     # Look up and down
     if(self.state == ST_LOOKUP): camera.look_timer -= 1

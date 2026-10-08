@@ -254,7 +254,7 @@ void main()
 
     vec4 fgColor;
 
-    bool does_crtScreen_enable = bool(1); 
+    bool does_crtScreen_enable = bool(0); 
     texture2D(uFilter, uvs);
 
 

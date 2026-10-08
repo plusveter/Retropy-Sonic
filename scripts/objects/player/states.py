@@ -272,7 +272,6 @@ def player_state_jump(self:PlayerBase):
 		self.on_object_positionx += 1
 
 
-
 def player_state_spindash(self:PlayerBase):
 	#  ref : https://github.com/DarkD04/Harmony-Framework/blob/110e1dc3452f049a8f670b1b2b09cce132fff55d/scripts/player_state_spindash/player_state_spindash.gml
 	# Trigger the spindash
@@ -645,6 +644,17 @@ def player_state_knockout(self:PlayerBase):
 		#	bubble.angle = random.randint(0, 360)
 		#
 
+def player_state_hanging(self:PlayerBase):
+	if(not self.state in [ST_HANG]): return
+
+	self.collision_allow = False
+	self.movement_allow = False
+	self.gravity_allow = False
+
+	self.anim = ANIM_HANG
+
+
+
 from .state_knux import *
 from .state_tails import *
 
@@ -655,9 +665,6 @@ def player_states(self:PlayerBase):
 	# ref : https://github.com/DarkD04/Harmony-Framework/blob/110e1dc3452f049a8f670b1b2b09cce132fff55d/scripts/player_states/player_states.gml
 
 	# Default flags:
-
-	
-	
 
 	self.direction_allow = True
 	self.movement_allow = True
@@ -694,6 +701,7 @@ def player_states(self:PlayerBase):
 	player_state_spring(self)
 	player_state_skid(self)
 	player_state_knockout(self)
+	player_state_hanging(self)
 
 	
 	# Tails object

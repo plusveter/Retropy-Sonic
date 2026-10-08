@@ -70,11 +70,15 @@ def run():
         
         camera.pre_update()
         tiledmap.pool.updates()
+        
         game_control()
+        camera.update()
+        
         tiledmap.set_view(camera.x, camera.y, kernel.size.x, kernel.size.y)
         background.camera_position = camera.position
         tiledmap.load_objects()
         tiledmap.refresh_all_tiles()
+        
 
         # render background
         graphic.palette = P_BACKGROUND

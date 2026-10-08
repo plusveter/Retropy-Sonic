@@ -199,6 +199,7 @@ class PlayerBase(TiledObjectEntity):
 		self.shield = S_NONE
 
 		self.invincible_timer = 0
+		self.speedup_timer = 0
 		self.dropdash_timer = 0
 		self.invincible = False
 
@@ -450,6 +451,8 @@ class PlayerBase(TiledObjectEntity):
 		
 		if not self.setAngle is None and self.ground:
 			final_rotation = self.setAngle
+
+		
 
 		self.ground_angle_is_typeX = False
 		if final_rotation == "X":

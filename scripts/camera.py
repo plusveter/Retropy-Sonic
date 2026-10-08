@@ -1,4 +1,4 @@
-from scripts.base import * 
+from scripts.macro import * 
 
 UNREACHABLE_VALUE = 10**6 
 
@@ -87,7 +87,7 @@ class Camera:
 
 	def handle_new_bound(self):
 		
-
+		
 		# top
 		y, speed, old_decrease_value, enable_decrease = self.bound_data_up
 		if not y is None: # verified if "Ypos" value does exist
@@ -95,7 +95,8 @@ class Camera:
 			if self.target_y < y:
 				self.bound_side_up = min((self.bottom)+max((y-(self.view_size.y))-self.y, -speed), old_decrease_value)
 			self.bound_data_up[0] = None 
-		else: 
+		else:
+			
 			if not enable_decrease: self.bound_side_up = UNREACHABLE_VALUE
 			else: self.bound_side_up += speed # Check current speed
 			self.bound_data_up[2] = UNREACHABLE_VALUE
@@ -203,6 +204,7 @@ class Camera:
 		return vec2(u * kernel.size.x, v * kernel.size.y)
 
 	def pre_update(self):
+		
 		self.handle_new_bound()
 		self.handle_mouse()
 
@@ -224,13 +226,14 @@ class Camera:
 			   disable_screen_focus=None, 
 			   disable_player_focus=None
 			   ):
-		
+
 		x, y, width, height = rect
 		
 		if side == CAMERA_BOUND_TOP:
 			if (0-width < x - self.x < self.view_size.x) or disable_screen_focus:
 				if (0 < (self.target_x - x) < width) or disable_player_focus:
 					if self.target_y+10 < y:
+						
 						self.bound_data_up[2] = self.bound_side_up
 						if not set_speed is None: self.bound_data_up[1] = set_speed
 						if not enable_decrease is None: self.bound_data_up[3] = bool(enable_decrease)

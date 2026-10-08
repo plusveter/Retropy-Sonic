@@ -116,24 +116,27 @@ class TiledObjectEntity(ObjectEntity ):
 
     def dump(self):
         return dict(
-            position   = self.position  ,
+            x           = self.position.x  ,
+            y           = self.position.y  ,
 
-            name       = self.tiled_name      ,
-            layerid    = self.tiled_layerid   ,
-            z          = self.tiled_z         ,
+            name        = self.tiled_name      ,
+            layerid     = self.tiled_layerid   ,
+            z           = self.tiled_z         ,
+            type        = self.__class__.__name__,
 
-            size       = self.tiled_size      ,
-            id         = self.tiled_id        ,
-            gid        = self.tiled_gid       ,
-            rotation   = self.tiled_rotation  ,
-            properties = self.tiled_properties
+            width       = self.tiled_size.x     ,
+            height      = self.tiled_size.y      ,
+            id          = self.tiled_id        ,
+            gid         = self.tiled_gid       ,
+            rotation    = self.tiled_rotation  ,
+            properties  = self.tiled_properties
         )
 
     def spawn(self):    tiledmap.pool.spawn(self)
 
     def kill(self):     tiledmap.pool.kill(self)
     
-    def save(self):     tiledmap.refresh_object(self.tiled_id)
+    def save(self):     tiledmap.refresh_object(self.dump())
 
     def delete(self):   tiledmap.remove_object(self.tiled_id)
 

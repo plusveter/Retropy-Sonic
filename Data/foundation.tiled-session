@@ -1,29 +1,30 @@
 {
-    "activeFile": "Maps/STZ1/map.tmj",
+    "activeFile": "Maps/AIZ/map.tmj",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
-        "Template",
-        "Sprites/Editor",
-        "Maps/Chap1",
-        "Template/spring",
+        ".",
+        "Maps/Chap1/TZ1",
+        "Maps/Globals",
         "Maps/STZ1/Rules",
-        "Template/spring/red",
-        "Maps",
-        "Maps/C1Z1",
-        "Sprites/Players",
+        "Maps/STZ1",
         "Maps/C1/TZ1",
+        "Sprites/Editor",
+        "Maps/C1Z1",
+        "Template",
+        "Template/spring/red",
+        "Maps/TTZ1",
+        "Sprites/Players",
+        "Maps/Chap1",
+        "Maps/AIZ",
+        "Template/spring",
+        "Maps/Global",
+        "Maps/TZ1",
+        "Maps/Z1",
+        "Template/dev",
         "Maps/TZ1/Sprites",
         "Maps/C1",
-        "Maps/TTZ1",
-        "Maps/C1/Z1",
-        "Sprites",
-        "Maps/Globals",
-        "Maps/STZ1",
-        ".",
-        "Maps/Global",
-        "Maps/Z1",
-        "Maps/TZ1",
-        "Maps/Chap1/TZ1"
+        "Maps",
+        "Maps/C1/Z1"
     ],
     "fileStates": {
         "": {
@@ -150,11 +151,11 @@
             "expandedObjectLayers": [
                 10
             ],
-            "scale": 1.5,
+            "scale": 0.0625,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": -871.9999999999999,
-                "y": -133.33333333333331
+                "x": 6544,
+                "y": 696
             }
         },
         "Maps/AIZ/map.tmj#Tiles": {
@@ -391,15 +392,14 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Maps/STZ1/map.tmj",
-        "Maps/STZ1/Rules/Chunks.tmj"
+        "Maps/AIZ/map.tmj"
     ],
     "project": "foundation.tiled-project",
-    "property.type": "bool",
+    "property.type": "int",
     "recentFiles": [
+        "Maps/AIZ/map.tmj",
         "Maps/STZ1/Rules/Chunks.tmj",
         "Maps/STZ1/map.tmj",
-        "Maps/AIZ/map.tmj",
         "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/AIZ/map.json",
         "Maps/AIZ/Tiles.json",

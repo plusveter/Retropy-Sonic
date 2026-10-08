@@ -92,9 +92,10 @@ class Player(PlayerBase):
 		for i in range(self.steps):
 			player_movement(self)
 			if self.collision_allow: # ...
-				player_collision(self)
+				if self.collision_allow: player_collision(self)
 				#player_collision_objects(self)
 			self.get_ANGLE()
+			
 
 		self.ground_object = False
 		self.flailing = 0
@@ -114,8 +115,7 @@ class Player(PlayerBase):
 		tile_angles = 0
 		sensors_collision = 1
 		hitbox_collision = 0
-
-		self.get_ANGLE()
+		
 		if debug:
 			if tile_angles:
 				prerender_rect(self.left_rot	, 1, special_flags=pygame.BLEND_ADD)	;self.draw(-self.position)

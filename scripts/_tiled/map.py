@@ -242,8 +242,9 @@ class TiledMap:
 
         if object_id < 0: return
 
-        for chunk_coord in object_data["chunks"]:
-            self.object_chunks[chunk_coord].remove(object_id)
+        if self.objects.get(object_id):
+            for chunk_coord in self.objects[object_id]["chunks"]:
+                self.object_chunks[chunk_coord].remove(object_id)
 
         x, y, width, height = object_data["x"], object_data["y"], object_data["width"], object_data["height"]
 

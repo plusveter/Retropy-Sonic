@@ -27,6 +27,7 @@ ST_KNUXLEDGE    = 14
 ST_KNUXFALL     = 15
 ST_KNUXSLIDE    = 16
 ST_DROPDASH     = 17
+ST_HANG         = 18
 
 
 # Animation macros:
@@ -66,6 +67,7 @@ ANIM_KNUXGETUP      = "Gliding Get Up"
 ANIM_KNUXLEDGE      = "Ledge Pull Up"
 ANIM_KNUXLAND       = ANIM_KNUXGETUP
 ANIM_DROPDASH       = "Super Transform"
+ANIM_HANG           = "Hanging"
 
 TAIL_1 = "Tails Stopped"
 TAIL_2 = "Tails Skidding"

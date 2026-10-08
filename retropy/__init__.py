@@ -334,7 +334,8 @@ def prerender_frame(frame, special_flags:int=0, rotation_id=1, palette_id:int = 
 def prerender_rect(rect: pygame.Rect, colorid:int, specials_flag:int = 0, palette_id:int = -1):
     array = numpy.zeros((rect.width*rect.height), dtype=numpy.uint8).reshape((rect.width, rect.height))
     array[:] = colorid
-    prerender(array, vec2(rect.topleft), specials_flag, palette_id=palette_id)
+    prerender(array, vec2(0), specials_flag, palette_id=palette_id)
+    graphic.rotation_id = 1
 
 
 # [Fonts]

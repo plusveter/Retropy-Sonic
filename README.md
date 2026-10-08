@@ -1,54 +1,54 @@
- # RETROPY Framework
 
- > **RETROPY** est une base personnel visant à reproduire l'essenciel d'une jeu sonic sur le language python. C'est un projet sur lequel **je travaille depuis Novembre 2021**, à noté que le Développement de **cette version à débuté le 17 Juin 2026**
+# RETROPY Framework
+
+> **RETROPY** is a personal framework aimed at recreating the core elements of a Sonic game using Python. This is a project that **I have been working on since November 2021**. Please note that **development of this version began on June 17, 2026**.
 
 > ## Important
-> - La compatibilité que ce soit sur d'autre appareil ou matérielle, n'a pas été pris en compte initialement.
-> - Ce projet n'a aucune afiliation avec SEGA. 
+> - Compatibility with other devices or hardware was not initially taken into consideration.
+> - This project is not affiliated with SEGA in any way.
 >
-> Merci de votre compréhension.
+> Thank you for your understanding.
 
->## Logiciel  utilisé
->- **[RetroED](<https://rsdkmodding.com/Tools/RetroED/>)** -
-            Logiciel de l'**Animation**(RSDKv5), du **DataPackage**(RSDKv5) & autre ... (spécifiquement créer pour la création de jeu utilisant la Retro Engine)
+> ## Software Used
+> - **[RetroED](https://rsdkmodding.com/Tools/RetroED/)** -
+>     Software for editing **Animations** (RSDKv5), **DataPackages** (RSDKv5), and more... (specifically designed for creating games using the Retro Engine).
 >
->- **[Tiled](<https://www.mapeditor.org/>)** - 
-            Logiciel editeur de **Map**(only json/tson), **tuiles**, **objects** & **layers**
+> - **[Tiled](https://www.mapeditor.org/)** -
+>     Map editor for **Maps** (JSON/TSON only), **Tiles**, **Objects**, and **Layers**.
 
->## Librairie utilisé
->- **[Pygame-CE](<https://pyga.me>)** -
-            Bibliothèque Python permettant de gérer l’audio et >les éléments visuels du jeu.
->- **[NumPy](<https://numpy.org/>)** -
-            Pour une meilleure gestion des tableaux (_arrays_) et >des opérations numériques.
->- **[ModernGL](<https://github.com/moderngl/moderngl>)** -
-            Pour une gestion plus avancée >des shaders et du rendu graphique.
->- **[Zstandard](<https://pypi.org/project/zstandard/>)** - 
-            Pour la décompression des >données.
+> ## Libraries Used
+> - **[Pygame-CE](https://pyga.me)** -
+>     Python library for handling audio and visual elements of the game.
+> - **[NumPy](https://numpy.org/)** -
+>     For better management of arrays and numerical operations.
+> - **[ModernGL](https://github.com/moderngl/moderngl)** -
+>     For more advanced shader management and graphics rendering.
+> - **[Zstandard](https://pypi.org/project/zstandard/)** -
+>     For data decompression.
 
->## Crédits
+> ## Credits
 >
->**Auteur principale:**
+> **Main Author:**
 >
->**[Plus Veter](<https://github.com/plusveter>)** -
->      Artiste Sprites, Developpeur
+> **[Plus Veter](https://github.com/plusveter)** -
+>     Sprite Artist, Developer
 >
->-- --
->**Code que j'ai utilisé :**
+> -- --
+> **Code Used:**
 >
->**[UltraRing / Harmony-Framework](<https://github.com/UltraRing/Harmony-Framework>)** - 
->      player_states, player_state_tails, player_state_knux, macros, direction
+> **[UltraRing / Harmony-Framework](https://github.com/UltraRing/Harmony-Framework)** -
+>     player_states, player_state_tails, player_state_knux, macros, direction
 >
->**[Rubberduckycooly / RSDK-Reverse](<https://github.com/Rubberduckycooly/RSDK-Reverse>)** - 
->      DataPack, Animation
+> **[Rubberduckycooly / RSDK-Reverse](https://github.com/Rubberduckycooly/RSDK-Reverse)** -
+>     DataPack, Animation
 >
+> -- --
+> **Music Used:**
 >
->-- -- 
->**Musique utilisé :**
+> **[UltraSonicHero](https://www.youtube.com/@UltraSonicHero)** -
+>     [PANIC PUPPET ACT 1 - Sonic 3D Blast Genesis (Rock Cover)](https://www.youtube.com/watch?v=VA6O6t2BYQo)
 >
->**[UltraSonicHero](<https://www.youtube.com/@UltraSonicHero>)** - 
->      [PANIC PUPPET ACT 1 - Sonic 3D Blast Genesis (Rock Cover)](<https://www.youtube.com/watch?v=VA6O6t2BYQo>)
+> -- --
+> **Sprites Used:**
 >
->-- --
->**Sprites utilisé :**
->
->SEGA & Sonic Team / Sonic2_2013 - Sonic, Tails, Knuckles
+> SEGA & Sonic Team / Sonic2_2013 - Sonic, Tails, Knuckles

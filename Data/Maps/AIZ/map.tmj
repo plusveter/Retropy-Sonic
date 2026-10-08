@@ -8532,6 +8532,11 @@
                  "type":"string",
                  "value":"Horizon Coast"
                 }]
+        }, 
+        {
+         "name":"music_name",
+         "type":"string",
+         "value":"PP1"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

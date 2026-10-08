@@ -45,7 +45,7 @@
             "scale": 0.20947265625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 3585.1934731934734,
+                "x": 3587.58041958042,
                 "y": 1792.5967365967367
             }
         },
@@ -151,11 +151,11 @@
             "expandedObjectLayers": [
                 10
             ],
-            "scale": 0.0625,
-            "selectedLayer": 5,
+            "scale": 1,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 6544,
-                "y": 696
+                "x": -595.5,
+                "y": -1.5
             }
         },
         "Maps/AIZ/map.tmj#Tiles": {

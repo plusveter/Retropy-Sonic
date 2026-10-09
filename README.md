@@ -50,8 +50,8 @@
 > **[UltraSonicHero](https://www.youtube.com/@UltraSonicHero)** -
 >     [PANIC PUPPET ACT 1 - Sonic 3D Blast Genesis (Rock Cover)](https://www.youtube.com/watch?v=VA6O6t2BYQo)
 >
-> **[bowtiey & rrthiel](https://www.youtube.com/@bowtiey_music)** -
->     [what?! a mario world athletic in the sonic the hedgehog soundfont](https://www.youtube.com/watch?v=kZYl4JgOBCA)
+> **[bowtiey](https://www.youtube.com/@bowtiey_music)** -
+>     [what?! a mario world athletic in the sonic the hedgehog soundfont |  (composed by RRThiel)](https://www.youtube.com/watch?v=kZYl4JgOBCA)
 > -- --
 > **Sprites Used:**
 >

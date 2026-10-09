@@ -2,29 +2,29 @@
     "activeFile": "Maps/AIZ/map.tmj",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
-        ".",
-        "Maps/Chap1/TZ1",
-        "Maps/Globals",
-        "Maps/STZ1/Rules",
-        "Maps/STZ1",
-        "Maps/C1/TZ1",
-        "Sprites/Editor",
-        "Maps/C1Z1",
-        "Template",
-        "Template/spring/red",
-        "Maps/TTZ1",
-        "Sprites/Players",
-        "Maps/Chap1",
         "Maps/AIZ",
+        "Maps/Chap1",
+        "Template",
+        "Maps/STZ1/Rules",
+        "Maps",
+        "Maps/TZ1/Sprites",
         "Template/spring",
+        "Maps/TTZ1",
+        "Template/spring/red",
+        "Maps/C1/Z1",
+        "Maps/Z1",
         "Maps/Global",
         "Maps/TZ1",
-        "Maps/Z1",
+        "Maps/Chap1/TZ1",
+        ".",
         "Template/dev",
-        "Maps/TZ1/Sprites",
+        "Maps/C1Z1",
+        "Maps/Globals",
         "Maps/C1",
-        "Maps",
-        "Maps/C1/Z1"
+        "Maps/STZ1",
+        "Sprites/Players",
+        "Maps/C1/TZ1",
+        "Sprites/Editor"
     ],
     "fileStates": {
         "": {
@@ -36,6 +36,7 @@
             "scaleInDock": 1
         },
         "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/Global/16x16.json": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/Tiles.tsx": {
@@ -149,13 +150,15 @@
         },
         "Maps/AIZ/map.tmj": {
             "expandedObjectLayers": [
-                10
+                10,
+                13,
+                2
             ],
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": -595.5,
-                "y": -1.5
+                "x": 1644.6666666666665,
+                "y": 587.3333333333333
             }
         },
         "Maps/AIZ/map.tmj#Tiles": {
@@ -392,15 +395,16 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Maps/AIZ/map.tmj"
+        "Maps/AIZ/map.tmj",
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj"
     ],
     "project": "foundation.tiled-project",
     "property.type": "int",
     "recentFiles": [
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/AIZ/map.tmj",
         "Maps/STZ1/Rules/Chunks.tmj",
         "Maps/STZ1/map.tmj",
-        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/AIZ/map.json",
         "Maps/AIZ/Tiles.json",
         "Maps/AIZ/Stage.json",

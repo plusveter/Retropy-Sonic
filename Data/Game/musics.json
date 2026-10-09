@@ -5,6 +5,10 @@
         {   
             "name":"PP1", "author": "UltraSonicHero",
             "filename": "PANIC PUPPET ACT 1 - Sonic 3D Blast Genesis (Rock Cover) 2.mp3", "start-end":[0, 160.0], "volume": 1.0
+        },
+        {   
+            "name":"AIZ", "author": "Bowtiey - Rrthiel ",
+            "filename": "athletic loop.ogg", "start-end":[2.6630, 141.3333], "volume": 1.0
         }
     ]
 }

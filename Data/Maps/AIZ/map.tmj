@@ -2790,7 +2790,7 @@
          "startx":-96,
          "starty":-32,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":672,
          "x":0,
          "y":0
@@ -3641,7 +3641,7 @@
          "startx":-16,
          "starty":-16,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":560,
          "x":0,
          "y":0
@@ -8536,7 +8536,7 @@
         {
          "name":"music_name",
          "type":"string",
-         "value":"PP1"
+         "value":"AIZ"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

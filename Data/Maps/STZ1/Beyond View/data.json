@@ -1,0 +1,35 @@
+{
+    "type": "simple",
+    "palette": {"imgfile": "layer1.gif"},
+    "offset" :  {"position": [0, -100], "speed": [0, 0.01]},
+    "scroll":   {"position": [0, 0], "speed": [0.25, 0.01]},
+
+    "layers": [
+        {
+            "image":"./layer1.gif", "offset" :  {"position": [0, 0], "speed": [0, 0]}, "orientation":"V", 
+            "axis_scrolldata": {
+                "0"     : { 
+                    "speed"         : {"value": 0}
+                }
+            }
+        },
+        {
+            "image":"./layer2.gif", "offset" :  {"position": [0, 0], "speed": [0, 0.01]}, "orientation":"V", 
+            "axis_scrolldata": {
+                "0"     : { 
+                    "speed"         : {"value": 0.01},
+                    "cumulation"  : {"value": 0.001}
+                }
+            }
+        },
+        {
+            "image":"./layer3.gif", "offset" :  {"position": [0, 0], "speed": [0, 0.02]}, "orientation":"V", 
+            "axis_scrolldata": {
+                "0"     : { 
+                    "speed"         : {"value": 0.02},
+                    "cumulation"  : {"value": 0.002}
+                }
+            }
+        }
+    ]
+}

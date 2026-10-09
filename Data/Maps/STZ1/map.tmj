@@ -2119,10 +2119,22 @@
                  "template":"..\/..\/Template\/spring\/red\/red_spring_left.tx",
                  "x":3840,
                  "y":848
+                }, 
+                {
+                 "id":377,
+                 "properties":[
+                        {
+                         "name":"select",
+                         "type":"string",
+                         "value":"Beyond View"
+                        }],
+                 "template":"..\/..\/Template\/SwapBackground.tx",
+                 "x":336,
+                 "y":48
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -2905,13 +2917,22 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":377,
+ "nextobjectid":378,
  "orientation":"orthogonal",
  "properties":[
         {
+         "name":"backgrounds",
+         "type":"list",
+         "value":[
+                {
+                 "type":"string",
+                 "value":"Beyond View"
+                }]
+        }, 
+        {
          "name":"music_name",
          "type":"string",
-         "value":"S3D_Blast - PANIC PUPPET ACT 1 (Rock Cover)"
+         "value":"PP1"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.12.2",

@@ -154,11 +154,11 @@
                 13,
                 2
             ],
-            "scale": 0.75,
-            "selectedLayer": 6,
+            "scale": 0.33,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 1644.6666666666665,
-                "y": 587.3333333333333
+                "x": 618.1818181818182,
+                "y": 28.787878787878753
             }
         },
         "Maps/AIZ/map.tmj#Tiles": {
@@ -285,11 +285,11 @@
                 5,
                 3
             ],
-            "scale": 0.125,
+            "scale": 0.75,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 9080,
-                "y": 516
+                "x": 463.99999999999994,
+                "y": 157.99999999999994
             }
         },
         "Maps/Sprites/Editor/Editor.tsx": {
@@ -401,8 +401,8 @@
     "project": "foundation.tiled-project",
     "property.type": "int",
     "recentFiles": [
-        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/AIZ/map.tmj",
+        "C:/Users/UTILISATEUR/Documents/PythonProject/No_continue/retropy.addition.old/Data/Maps/TTZ1/map.tmj",
         "Maps/STZ1/Rules/Chunks.tmj",
         "Maps/STZ1/map.tmj",
         "Maps/AIZ/map.json",

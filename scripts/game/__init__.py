@@ -10,6 +10,7 @@ def run():
     # initilisation of settings
     kernel.size = kernel.window.size = vec2(360, 200)
     kernel.window.flags = pygame.RESIZABLE
+    kernel.window.name = "RETROPY Sonic Project - Plus Veter"
     kernel.mixerscale = 10
     kernel.soundfx.volume = 5
     kernel.music.volume = 5

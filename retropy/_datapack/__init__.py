@@ -1,7 +1,12 @@
 from .import rsdkv5, default
 import os, pygame
 
-datapack = default.Default()
+
+if os.path.isfile("Data.rsdk"):
+    datapack = rsdkv5.RSDKv5("Data.rsdk")
+else:
+    datapack = default.Default()
+
 
 def load_rsdkv5_datapack(path):
     """ [Retropy | DataPack | RSDKv5] """ 

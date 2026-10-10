@@ -128,3 +128,6 @@ Thumbs.db
 
 # SQLite
 *.sqlite3
+
+# RSDK
+Data.rsdk

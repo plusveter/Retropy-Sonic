@@ -69,9 +69,9 @@ class TiledDataTileset:
 	def is_base_on_collections(self, args): ...
 		
 	def load_xml_tileset(self, path_tileset):
-		with open(path_tileset, "rb") as tilesetsfile:
-			self.read_xml_tileset(xmlET.parse(tilesetsfile))
-			tilesetsfile.close()
+		self.read_xml_tileset(
+			datapack.load_XMLfile(path_tileset)
+			)
 	
 
 	def read_xml_tileset(self, tilesets_tree:xmlET):
@@ -113,9 +113,7 @@ class TiledDataTileset:
 
 	
 	def load_json_tileset(self, path_tileset):
-		with open(path_tileset) as tilesetsfile: 
-			self.read_json_tileset(json.load(tilesetsfile))
-			tilesetsfile.close()
+		self.read_json_tileset(datapack.load_jsonfile(path_tileset))
 		
 	def read_json_tileset(self, tilesetsdata:dict):
 		self.name       = tilesetsdata["name"]

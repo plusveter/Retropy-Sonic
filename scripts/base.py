@@ -5,7 +5,6 @@ from . import _wrapper as wrapper
 from ._background import Background
 from .macro import *
 
-
 class General:
     dynamic_sprites:SpritesAnimations = None
     debug_mouse = False

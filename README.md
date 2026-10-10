@@ -25,6 +25,8 @@
 >     For more advanced shader management and graphics rendering.
 > - **[Zstandard](https://pypi.org/project/zstandard/)** -
 >     For data decompression.
+> - **[pyinstaller](https://pyinstaller.org/en/stable/)**
+>     Turn the project into a standalone application
 
 > ## Credits
 >

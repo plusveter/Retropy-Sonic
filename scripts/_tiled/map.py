@@ -274,9 +274,8 @@ class TiledMap:
         return self.objecttypes.get(type, [])
     
     def load_json_map(self, pathmap:str, debug=False):
-        with open(pathmap) as mapfile: 
-            mapdata = json.load(mapfile)
-            mapfile.close()
+        mapdata = datapack.load_jsonfile(pathmap)
+        
         
         if not bool(mapdata["infinite"]):
             raise NotImplementedError(
@@ -301,7 +300,7 @@ class TiledMap:
 
             if tileset.is_base_on_tilesets:
                 #[Base on Tilesets]
-                image = pygame.image.load(tileset.image_source)
+                image = datapack.load_8b_imagefile(tileset.image_source)
                 image_width = tileset.image_width
                 image_height = tileset.image_height
 
@@ -366,7 +365,7 @@ class TiledMap:
                 # [Collection]
                 for tileid in tileset.tiles:
                     imagedata = tileset.tiles[tileid]
-                    new_base_tile = pygame.image.load(imagedata["image"]).convert(8)
+                    new_base_tile = datapack.load_8b_imagefile(imagedata["image"])
                     
                     for i in range(8):
                         # math

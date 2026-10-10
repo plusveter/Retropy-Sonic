@@ -116,32 +116,36 @@ def game_control():
     mouseposition = camera.get_scale_position(-vec2(pygame.mouse.get_rel()))
     if pygame.mouse.get_pressed()[0]: camera.position += mouseposition
 
-    if pygame.mouse.get_pressed()[2]: 
-        i = (kernel.frames*(math.pi)*2)+(kernel.frames)
+    if False: # This is used for tiled editing
+        if pygame.mouse.get_pressed()[2]: 
+            i = (kernel.frames*(math.pi)*2)+(kernel.frames)
 
+            
+            
+            layer = check_layer_by_name("Debug")
+            if (layer == -1):
+                layer = tiledmap.new_layer()
+                layer.name = "Debug"
+                layer.type = LAYERTYPE_OBJECTGROUP
+                tiledmap.add_layer(layer)
+
+            player = objects.Player()
+            player.tiled_width = 10
+            player.tiled_height = 10
+            player.position = ( camera.position + camera.get_scale_position(vec2(pygame.mouse.get_pos())) )
+            player.spawn()
+        
+        
         
 
-        layer = check_layer_by_name("Debug")
-        if (layer == -1):
-            layer = tiledmap.new_layer()
-            layer.name = "Debug"
-            layer.type = LAYERTYPE_OBJECTGROUP
-            tiledmap.add_layer(layer)
-
-        player = objects.Player()
-        player.tiled_width = 10
-        player.tiled_height = 10
-        player.position = ( camera.position + camera.get_scale_position(vec2(pygame.mouse.get_pos())) )
-        player.spawn()
-
-    kernel.framerate = 60
-    if not kernel.window.focus:
-        kernel.framerate = 20
-        old_pos = camera.position.copy()
-        tiledmap.reset(object_is_refreshed=0)
-        general.reload_map()
-        tiledmap.load_visible_tilelayers_2Darray(26, 16)
-        camera.position = old_pos
+            kernel.framerate = 60
+            if not kernel.window.focus:
+                kernel.framerate = 20
+                old_pos = camera.position.copy()
+                tiledmap.reset(object_is_refreshed=0)
+                general.reload_map()
+                tiledmap.load_visible_tilelayers_2Darray(26, 16)
+                camera.position = old_pos
 
     if get_pressed(K_ESCAPE):
         print("restarted")

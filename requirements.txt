@@ -3,3 +3,5 @@ moderngl
 pygame-ce
 numpy
 pyyaml
+
+pyinstaller

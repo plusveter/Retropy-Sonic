@@ -55,11 +55,11 @@ def set_palette_at(index:int, color:list[int], pal_id:int = 0):
 
 def define_palette_from_image(imagepath:str, pal_id:int = 0):
     """ [Retropy | Palettes] """
-    kernel.palette.define_array(pal_id, pygame.image.load(imagepath).get_palette())
+    kernel.palette.define_array(pal_id, datapack.load_imagefile(imagepath).get_palette())
 
 def load_palette_from_image(imagepath:str):
-    """ [Retropy | Palettes] """
-    return numpy.array(pygame.image.load(imagepath).get_palette())
+    """ [Retropy | Palettes] """ 
+    return numpy.array((datapack.load_imagefile(imagepath).convert(8)).get_palette())
 
 def save_into_palfile(path:str, palette:numpy.ndarray):
     bytedata = b""
@@ -115,7 +115,7 @@ def get_clicked(index_key):
 # [Surfarray]
 def load_surfarray_image(imagepath:str):
     """ [Retropy | Surfarray] """
-    return pygame.surfarray.array2d(pygame.image.load(imagepath).get_palette())
+    return pygame.surfarray.array2d(datapack.load_imagefile(imagepath).get_palette())
 
 def convert_surfarray_to_surface(np_2Darray:numpy.ndarray, special_flags = 0, pal_id:int =0):
     """ [Retropy | Surfarray] """

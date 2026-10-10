@@ -1,5 +1,6 @@
 import pygame as pg
 from .macro import *
+from retropy._datapack import datapack
 
 class Music:
     def __init__(self, kernel):
@@ -119,7 +120,7 @@ class Music:
 
                         if self.media != music2_id:
                             loading_music = self.lists[music2_id]
-                            pg.mixer.music.load(loading_music["filename"])
+                            datapack.load_musicfile(loading_music["filename"])
                             pg.mixer.music.play()
                             pg.mixer.music.set_pos(pos)
                             self.lists[music2_id]["pos"] = pos

@@ -208,8 +208,6 @@ class ZipLine(TiledObjectEntity):
             self.state = "idle"
 
     def draw_zipline(self):
-        center = (self.end_pos + self.start_pos)/2
-
         rope_rect = rect(
             0,
             0,

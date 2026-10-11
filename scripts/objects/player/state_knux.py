@@ -174,10 +174,6 @@ def player_state_wallclimb(self:PlayerBase):
 	self.movement_allow = False
 	self.direction_allow = False
 	self.gravity_allow = False
-	jump_strength  = self.constants["jmp"]
-	
-	# Change direction
-	image_xscale = self.facing
 	
 	# Change animation
 	if(self.speed.y != 0) :

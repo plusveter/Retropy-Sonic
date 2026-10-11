@@ -171,7 +171,6 @@ def Grounding_Upward(self:PlayerBase):
     yspeed = -self.speed[1]
 
     absXSpeed = abs(xspeed)
-    absYSpeed = abs(yspeed)
     gspeed = xspeed
 
     # Upward Slope (Right)

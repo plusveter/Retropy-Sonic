@@ -384,7 +384,6 @@ class PlayerBase(TiledObjectEntity):
 		else:
 			final_rotation = 0
 
-		SIZE = 128
 		self.left_rot = pygame.Rect(0, 0, 0, 0)
 		self.right_rot = pygame.Rect(0, 0, 0, 0)
 		self.mouse_rot = pygame.Rect(0, 0, 0, 0)
@@ -508,7 +507,6 @@ class PlayerBase(TiledObjectEntity):
 		absXSpeed = abs(xspeed)
 		absYSpeed = abs(yspeed)
 		absYSpeedHalf = absYSpeed * 0.5
-		sign = -math.copysign(1, math.sin(math.radians(self.ground_angle )))
 
 		if self.ground_angle  >= 180:
 			# Full Steep
@@ -572,7 +570,6 @@ class PlayerBase(TiledObjectEntity):
 		if self.player_id == CHAR_TAILS: top += 4;bottom -= 4  
 
 		stop_pivot_x = 2
-		stop_pivot_y = 0
 		if not self.ground: stop_pivot_x = (16-right)
 		
 		

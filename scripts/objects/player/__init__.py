@@ -89,7 +89,7 @@ class Player(PlayerBase):
 		
 		self.chunk_mask = tiledmap.get_chunk_datamask(self.position[0], self.position[1], radius=3+self.steps, tilelayer_id=self.ground_layer)
 
-		for i in range(self.steps):
+		for _ in range(self.steps):
 			player_movement(self)
 			if self.collision_allow: # ...
 				if self.collision_allow: player_collision(self)

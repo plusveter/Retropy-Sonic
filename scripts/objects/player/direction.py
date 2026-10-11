@@ -15,8 +15,6 @@ def player_direction(self:PlayerBase):
 
     top = self.constants["top"]
     acc = self.constants["acc"]
-    dec = self.constants["dec"]
-    air = self.constants["air"]
     frc = self.constants["frc"]
     slp = self.constants["slp"]
 

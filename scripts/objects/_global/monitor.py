@@ -168,7 +168,7 @@ class Monitor(TiledObjectEntity):
                 )
 
                 if (
-                    collision_side == C_TOP
+                    collision_side == C_BOTTOM
                     and image_yscale == 1
                     and player.speed.y <= 0
                 ):

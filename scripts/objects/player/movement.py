@@ -23,8 +23,6 @@ def dev_control(self:PlayerBase):
 
 def player_movement(self:PlayerBase):
 
-	limit   = self.constants["limit"]
-
 	if False:
 		dev_control(self)
 	else:

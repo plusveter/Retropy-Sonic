@@ -8,7 +8,6 @@ def player_state_tailsfly(self:PlayerBase):
     
     if(self.state == ST_JUMP and self.press_action() and self.player_id == CHAR_TAILS):
         self.tails_timer = 480
-        y_accel = 0.03125
         self.state = ST_TAILSFLY
     
     # Stop if not specific state

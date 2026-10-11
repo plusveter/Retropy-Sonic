@@ -211,7 +211,6 @@ def player_state_jump(self:PlayerBase):
 	
 	jump_strength  = self.constants["jmp"]
 	jump_release = 3
-	grv         = self.constants["grv"]
 
 	self.can_jump = (self.state in can_jump_states)
 
@@ -368,7 +367,6 @@ def player_state_roll(self:PlayerBase):
 	can_roll_states = [ST_NORMAL, ST_JUMP, ST_LOOKDOWN, ST_SKID]
 
 	roll_deceleration_speed     = self.constants["roll_deceleration_speed"]
-	roll_friction_speed         = self.constants["roll_friction_speed"]
 	slprollup                   = self.constants["slprollup"]
 	slprolldown                 = self.constants["slprolldown"]
 	

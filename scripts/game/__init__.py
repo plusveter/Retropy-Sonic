@@ -118,8 +118,6 @@ def game_control():
 
     if False: # This is used for tiled editing
         if pygame.mouse.get_pressed()[2]: 
-            i = (kernel.frames*(math.pi)*2)+(kernel.frames)
-
             
             
             layer = check_layer_by_name("Debug")

@@ -43,6 +43,9 @@ class TiledObjectPool:
         self.prerenders_layers = {}
         self.updated_object = []
 
+        pending = list(self.objects.keys())
+        queued = set(pending)
+
         def priority_key(objectid):
             obj = self.objects.get(objectid)
             return (
@@ -50,27 +53,31 @@ class TiledObjectPool:
                 objectid
             )
 
-        def sort_ids(object_ids):
-            return sorted(
-                object_ids,
-                key=priority_key
-            )
+        while pending:
+            pending.sort(key=priority_key)
+            objectid = pending.pop(0)
+            queued.discard(objectid)
 
-        def update_list(object_list):
-            for objectid in sort_ids(object_list):
-                if objectid in self.updated_object:
+            if objectid in self.updated_object:
+                continue
+
+            self.updated_object.append(objectid)
+
+            focused_objects = self.objects_focus.pop(objectid, [])
+            for focused_id in focused_objects:
+                if focused_id in self.updated_object:
+                    continue
+                if focused_id in queued:
+                    continue
+                if not self.objects.get(focused_id):
                     continue
 
-                self.updated_object.append(objectid)
+                pending.append(focused_id)
+                queued.add(focused_id)
 
-                if self.objects_focus.get(objectid):
-                    focused_objects = self.objects_focus.pop(objectid)
-                    update_list(focused_objects)
-
-                obj = self.objects.get(objectid)
-                if obj: obj.update()
-
-        update_list(self.objects.keys())
+            obj = self.objects.get(objectid)
+            if obj:
+                obj.update()
         
 
     def add_preceding_obj(self, object:type, preceding_obj_id):

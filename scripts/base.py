@@ -35,7 +35,7 @@ class General:
         self.waterwave_tracker = AnimationTracker()
 
         # Fonts
-        self.dev_font = load_datafont_from_animation(load_RSDKv5Animations("Data\Sprites\Dev\Font.bin"), "Font", ASCII_TABLE)
+        self.dev_font = load_datafont_from_animation(load_RSDKv5Animations("Data/Sprites/Dev/Font.bin"), "Font", ASCII_TABLE)
         self.hud_numbers_font = load_datafont_from_animation(self.hud_sprites, "Numbers", HEXADECIMAL_TABLE)
 
         # Palettes

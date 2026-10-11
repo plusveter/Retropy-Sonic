@@ -96,9 +96,9 @@ def bg_simple(data:dict[str, list[dict[str, dict]]]):
             +("\n"*2)+
             f"Palette hasn't been setup"
             +"\n"+
-            """- example 1: "palette": {"palfile": ".\/path\/file.pal"}   """
+            """- example 1: "palette": {"palfile": "./path/file.pal"}   """
             +"\n"+
-            """- example 2: "palette": {"imgfile": ".\/path\/file.gif"}   """
+            """- example 2: "palette": {"imgfile": "./path/file.gif"}   """
             )
 
     return dict(

@@ -46,7 +46,7 @@ def run():
     # setup
     camera.view_size = kernel.size
     general.load_map("AIZ")
-    general.musics = load_musics_from_jsonfile("Data\Game\musics.json")
+    general.musics = load_musics_from_jsonfile("Data/Game/musics.json")
     tiledmap.load_visible_tilelayers_2Darray(26, 16)
     play_music(general.musics.get(tiledmap.data.properties.get("music_name", ""), -1))
     

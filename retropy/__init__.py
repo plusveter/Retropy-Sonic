@@ -79,7 +79,7 @@ def load_from_palfile(path_palette) -> numpy.ndarray:
     def CONVERT_ASCII(line):
         ASCII_CODE = {48:0, 49:1, 50:2, 51:3, 52:4, 53:5, 54:6,55:7, 56:8, 57:9}
         number = 0
-        while not int(fileContent[line]) in [32, 13]:
+        while not int(fileContent[line]) in [32, 13, 10]:
             number = (number*10) + ASCII_CODE[int(fileContent[line])]
             line += 1
         return number, line
@@ -87,13 +87,12 @@ def load_from_palfile(path_palette) -> numpy.ndarray:
     PAL_DATA = []
 
     fileContent = datapack.load_datafile(path_palette)
-    line = 21
-
+    fileContent = fileContent.replace(b'\r', b'')
+    line = 18
     for i in range(256):
         r, line = CONVERT_ASCII(line); line += 1
         g, line = CONVERT_ASCII(line); line += 1
         b, line = CONVERT_ASCII(line); line += 1
-        line += 1
         PAL_DATA.append([r, g, b])
             
     return numpy.array(PAL_DATA, dtype=numpy.uint8)

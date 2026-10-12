@@ -493,27 +493,39 @@ class TiledMap:
         for tilelayer_id in self.layers:
             if self.layers[tilelayer_id].visible: size_array = self.add_tilelayer_2Darray(tilelayer_id, width, height)
         return size_array
+    
     def get_chunk_datamask(self, x, y, radius:int, tilelayer_id:int):
-        # setup vars
         tilewidth, tileheight = self.data.tilewidth, self.data.tileheight
         x, y, radius = int(x), int(y), int(radius)
-        
 
-        Collision = numpy.zeros(radius*radius*tilewidth*tileheight*2*2).reshape(radius*tilewidth*2, radius*tileheight*2)
+        origin_x = int((x - x % tilewidth) / tilewidth)
+        origin_y = int((y - y % tileheight) / tileheight)
 
-        for i in range(radius*2):
-            for j in range(radius*2):
-                tile_id = self.get_tile(int((x - x%tilewidth)/tilewidth) + (i-radius), int((y - y%tileheight)/tileheight) + (j-radius), tilelayer_id)
+        collision = numpy.zeros(
+            (radius * tilewidth * 2, radius * tileheight * 2),
+            dtype=numpy.uint8,
+        )
+
+        for i in range(radius * 2):
+            tile_x = origin_x + (i - radius)
+            x1 = i * tilewidth
+            x2 = (i + 1) * tilewidth
+
+            for j in range(radius * 2):
+                tile_id = self.get_tile(tile_x, origin_y + (j - radius), tilelayer_id)
                 if tile_id != 0:
-                    Collision[(i*tilewidth): ((i+1)*tilewidth), (j*tileheight): ((j+1)*tileheight)] = self.tiles[tile_id]
-    
-        return  surface_to_dmask(
-            convert_surfarray_to_surface(Collision),
-                (
-                    (x-(radius*tilewidth))- (x%tilewidth), 
-                    (y-(radius*tileheight))-(y%tileheight)
-                )
-            )
+                    collision[
+                        x1:x2,
+                        (j * tileheight):((j + 1) * tileheight),
+                    ] = self.tiles[tile_id]
+
+        return surface_to_dmask(
+            convert_surfarray_to_surface(collision),
+            (
+                (x - (radius * tilewidth)) - (x % tilewidth),
+                (y - (radius * tileheight)) - (y % tileheight),
+            ),
+        )
 
     def get_collision_angle(self, x, y, tilelayer_id:int):
         tilewidth, tileheight = self.data.tilewidth, self.data.tileheight
